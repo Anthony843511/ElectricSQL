@@ -1,6 +1,6 @@
 [
   {
-    "Query": "9月南昌发生的线路停运事件中，当前管辖电采暖用户数超过100的受影响公变数量及影响的老弱病残用户数量",
+    "Query": "2024年9月南昌发生的线路停运事件中，当前管辖电采暖用户数超过100的受影响公变数量及影响的老弱病残用户数量",
     "Table": "ads_line_outage_event",
     "SQL": "SELECT SUM(EFFECT_PUB_TRANS_NUM) as effect_pub_trans_num_sum, SUM(EFFECT_EWSD_CONS_COUNT) as effect_ewsd_cons_count_sum FROM ads_line_outage_event WHERE path_name LIKE '%南昌%' AND EVENT_TIME >= '2024-9-01 00:00:00' AND EVENT_TIME <= '2024-9-30 23:59:59' AND ELECHEAT_CONS_COUNT > 100"
   },
@@ -7469,4 +7469,5 @@
     "Table": "ads_branch_line_outage_event",
     "SQL": "SELECT SUM(OUTAGE_INFO_NUM) as outage_info_num_sum, SUM(OUTAGE_INFO_NUM) as outage_info_num_sum FROM ads_branch_line_outage_event WHERE EVENT_TIME >= '2024-6-2 00:00:00' AND EVENT_TIME <= '2024-6-2 23:59:59' and path_name LIKE '%南昌%'"
   }
+
 ]
