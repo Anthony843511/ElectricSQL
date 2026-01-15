@@ -1,0 +1,3293 @@
+[
+{
+    "ads_branch_line_outage_event": {
+        "类型": "mysql",
+        "表名": "ads_branch_line_outage_event",
+        "描述": "支线停运事件",
+        "属性": [
+            {
+                "列名": "ID",
+                "描述": "主键ID"
+            },
+            {
+                "列名": "BRANCH_LINE_ID",
+                "描述": "支线ID"
+            },
+            {
+                "列名": "BRANCH_LINE_NAME",
+                "描述": "支线名称"
+            },
+            {
+                "列名": "LINE_ID",
+                "描述": "线路ID"
+            },
+            {
+                "列名": "LINE_NAME",
+                "描述": "线路名称"
+            },
+            {
+                "列名": "SUBSTATION_ID",
+                "描述": "变电站ID"
+            },
+            {
+                "列名": "SUBSTATION_NAME",
+                "描述": "变电站名称"
+            },
+            {
+                "列名": "CITY",
+                "描述": "所属地市"
+            },
+            {
+                "列名": "CITY_NAME",
+                "描述": "所属地市名称"
+            },
+            {
+                "列名": "district",
+                "描述": "所属区县、供电中心"
+            },
+            {
+                "列名": "district_name",
+                "描述": "所属区县、供电中心名称"
+            },
+            {
+                "列名": "STATION",
+                "描述": "所属供电所编码"
+            },
+            {
+                "列名": "STATION_NAME",
+                "描述": "所属供电所名称"
+            },
+            {
+                "列名": "TEAM",
+                "描述": "班组"
+            },
+            {
+                "列名": "TEAM_NAME",
+                "描述": "班组名称"
+            },
+            {
+                "列名": "EQUIPMENT_OWNER_ID",
+                "描述": "设备主人ID"
+            },
+            {
+                "列名": "EQUIPMENT_OWNER_TEL",
+                "描述": "设备主人电话"
+            },
+            {
+                "列名": "EQUIPMENT_OWNER_NAME",
+                "描述": "设备主人名称"
+            },
+            {
+                "列名": "OUTAGE_EVENT_TYPE",
+                "描述": "停运事件大类：1:故障，2:计划"
+            },
+            {
+                "列名": "OUTAGE_EVENT_TYPE_NAME",
+                "描述": "停运事件大类名称"
+            },
+            {
+                "列名": "OUTAGE_REASON",
+                "描述": "停电原因"
+            },
+            {
+                "列名": "EVENT_TIME",
+                "描述": "事件发生时间"
+            },
+            {
+                "列名": "POWER_ON_TIME",
+                "描述": "上电时间"
+            },
+            {
+                "列名": "EVENT_DURATION",
+                "描述": "事件发生时长（小时）"
+            },
+            {
+                "列名": "LINE_NATURE",
+                "描述": "线路性质：1--地市公司运维；2-县公司运维；3--用户运维"
+            },
+            {
+                "列名": "LINE_NATURE_NAME",
+                "描述": "线路性质名称"
+            },
+            {
+                "列名": "BRANCH_LINE_NUM",
+                "描述": "当前管辖支线数"
+            },
+            {
+                "列名": "PUBLIC_TRANSFORMER_NUM",
+                "描述": "当前管辖公变数"
+            },
+            {
+                "列名": "PRIVATE_TRANSFORMER_NUM",
+                "描述": "当前管辖专变数"
+            },
+            {
+                "列名": "CONS_NUM",
+                "描述": "当前管辖用户数"
+            },
+            {
+                "列名": "IMP_CONS_NUM",
+                "描述": "当前管辖重要用户数"
+            },
+            {
+                "列名": "SEN_CONS_NUM",
+                "描述": "当前管辖敏感用户数"
+            },
+            {
+                "列名": "LIVELIHOOD_CONS_COUNT",
+                "描述": "当前管辖民生用户数"
+            },
+            {
+                "列名": "ZERO_HOUSEHOLD_TRANSFER",
+                "描述": "当前管辖零用电用户数"
+            },
+            {
+                "列名": "GPC_CONS_NUM",
+                "描述": "当前管辖光伏用户数"
+            },
+            {
+                "列名": "EWSD_CONS_COUNT",
+                "描述": "当前管辖老弱病残用户数"
+            },
+            {
+                "列名": "COALTOELEC_CONS_COUNT",
+                "描述": "当前管辖煤改电用户数"
+            },
+            {
+                "列名": "IRRI_CONS_COUNT",
+                "描述": "当前管辖农灌用户数"
+            },
+            {
+                "列名": "ELECHEAT_CONS_COUNT",
+                "描述": "当前管辖电采暖用户数"
+            },
+            {
+                "列名": "POP_TRANSFORMER_NUM",
+                "描述": "当前管辖保电台区数"
+            },
+            {
+                "列名": "GPC_TRANSFORMER_NUM",
+                "描述": "当前管辖光伏台区数"
+            },
+            {
+                "列名": "EFFECT_BRANCH_LINE_NUM",
+                "描述": "影响支线数"
+            },
+            {
+                "列名": "EFFECT_PUB_TRANS_NUM",
+                "描述": "影响公变数"
+            },
+            {
+                "列名": "EFFECT_PRI_TRANS_NUM",
+                "描述": "影响专变数"
+            },
+            {
+                "列名": "EFFECT_CONS_NUM",
+                "描述": "影响用户数"
+            },
+            {
+                "列名": "EFFECT_IMP_CONS_NUM",
+                "描述": "影响重要用户数"
+            },
+            {
+                "列名": "EFFECT_SEN_CONS_NUM",
+                "描述": "影响敏感用户数"
+            },
+            {
+                "列名": "EFFECT_LIVELIHOOD_CONS_COUNT",
+                "描述": "影响民生用户数"
+            },
+            {
+                "列名": "EFFECT_ZERO_HOUSEHOLD_TRANSFER",
+                "描述": "影响零用电用户数"
+            },
+            {
+                "列名": "EFFECT_GPC_CONS_NUM",
+                "描述": "影响光伏用户数"
+            },
+            {
+                "列名": "EFFECT_EWSD_CONS_COUNT",
+                "描述": "影响老弱病残用户数"
+            },
+            {
+                "列名": "EFFECT_COALTOELEC_CONS_COUNT",
+                "描述": "影响煤改电用户数"
+            },
+            {
+                "列名": "EFFECT_IRRI_CONS_COUNT",
+                "描述": "影响农灌用户数"
+            },
+            {
+                "列名": "EFFECT_ELECHEAT_CONS_COUNT",
+                "描述": "影响电采暖用户数"
+            },
+            {
+                "列名": "EFFECT_POP_TRANSFORMER_NUM",
+                "描述": "影响保电台区数"
+            },
+            {
+                "列名": "EFFECT_GPC_TRANSFORMER_NUM",
+                "描述": "影响光伏台区数"
+            },
+            {
+                "列名": "MID_VOL_HOURS_NUM",
+                "描述": "中压时户数（冻结）"
+            },
+            {
+                "列名": "LOW_VOL_HOURS_NUM",
+                "描述": "低压时户数（冻结）"
+            },
+            {
+                "列名": "FAULT_ORDER_NUM",
+                "描述": "故障报修工单总数量"
+            },
+            {
+                "列名": "PROACTIVE_REPAIR_ORDER_NUM",
+                "描述": "主动抢修工单总数量"
+            },
+            {
+                "列名": "COMPLAIN_ORDER_NUM",
+                "描述": "投诉工单总数量"
+            },
+            {
+                "列名": "OUTAGE_INFO_NUM",
+                "描述": "停电信息已发布工单数"
+            },
+            {
+                "列名": "OPINION_ORDER_NUM",
+                "描述": "意见工单数"
+            },
+            {
+                "列名": "is_power",
+                "描述": "是否复电: 0,否 1,是"
+            },
+            {
+                "列名": "IS_POWER_NAME",
+                "描述": "是否复电（中文）"
+            },
+            {
+                "列名": "LESS_POWER_SUPPLY",
+                "描述": "少供电量"
+            },
+            {
+                "列名": "PATH",
+                "描述": "单位全路径;"
+            },
+            {
+                "列名": "PATH_NAME",
+                "描述": "单位全路径名称;"
+            }
+        ]
+    },
+    "ads_bra_line_outage_org_static": {
+        "类型": "mysql",
+        "表名": "ads_bra_line_outage_org_static",
+        "描述": "支线停运事件统计表-单位维度",
+        "属性": [
+            {
+                "列名": "ID",
+                "描述": "主键ID"
+            },
+            {
+                "列名": "CITY",
+                "描述": "所属地市"
+            },
+            {
+                "列名": "CITY_NAME",
+                "描述": "所属地市名称"
+            },
+            {
+                "列名": "district",
+                "描述": "所属区县、供电中心"
+            },
+            {
+                "列名": "district_name",
+                "描述": "所属区县、供电中心名称"
+            },
+            {
+                "列名": "STATION",
+                "描述": "所属供电所编码"
+            },
+            {
+                "列名": "STATION_NAME",
+                "描述": "所属供电所名称"
+            },
+            {
+                "列名": "DATA_TIME",
+                "描述": "数据时间"
+            },
+            {
+                "列名": "DATE_TYPE",
+                "描述": "时间类别1:年 2:月 3:天"
+            },
+            {
+                "列名": "YEAR",
+                "描述": "年"
+            },
+            {
+                "列名": "MONTH",
+                "描述": "月"
+            },
+            {
+                "列名": "DAY",
+                "描述": "日"
+            },
+            {
+                "列名": "BRANCH_LINE_NUM",
+                "描述": "当前管辖支线数"
+            },
+            {
+                "列名": "OUTAGE_BRANCH_LINE_NUM",
+                "描述": "停运支线数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_BRANCH_LINE_NUM",
+                "描述": "故障停运支线数"
+            },
+            {
+                "列名": "PLAN_OUTAGE_BRANCH_LINE_NUM",
+                "描述": "计划停运支线数"
+            },
+            {
+                "列名": "OUTAGE_BRANCH_LINE_TIMES",
+                "描述": "停运支线次数;"
+            },
+            {
+                "列名": "PLAN_OUTAGE_BRANCH_LINE_TIMES",
+                "描述": "计划停运支线次数"
+            },
+            {
+                "列名": "PLAN_OUTAGE_PUBLIC_TRANS_NUM",
+                "描述": "计划停运公变次数"
+            },
+            {
+                "列名": "PLAN_OUTAGE_PRIVATE_TRANS_NUM",
+                "描述": "计划停运专变次数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_BRANCH_LINE_TIMES",
+                "描述": "故障停运支线次数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_PUBLIC_TRANS_NUM",
+                "描述": "故障停运公变次数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_PRIVATE_TRANS_NUM",
+                "描述": "故障停运专变次数"
+            },
+            {
+                "列名": "POWERON_OUTAGE_NUM",
+                "描述": "已复电停运数;"
+            },
+            {
+                "列名": "POWEROFF_OUTAGE_NUM",
+                "描述": "未复电停运数;"
+            },
+            {
+                "列名": "FAULT_ON_OUTAGE_NUM",
+                "描述": "故障已复电停运数;"
+            },
+            {
+                "列名": "FAULT_OFF_OUTAGE_NUM",
+                "描述": "故障未复电停运数;"
+            },
+            {
+                "列名": "PLAN_ON_OUTAGE_NUM",
+                "描述": "计划已复电停运数;"
+            },
+            {
+                "列名": "PLAN_OFF_OUTAGE_NUM",
+                "描述": "计划未复电停运数;"
+            },
+            {
+                "列名": "FAULT_OUTAGE_CONS_NUM",
+                "描述": "故障停运影响用户数"
+            },
+            {
+                "列名": "PLAN_OUTAGE_CONS_NUM",
+                "描述": "计划停运影响用户数"
+            },
+            {
+                "列名": "PLAN_OUTAGE_SEN_CONS_NUM",
+                "描述": "计划停运影响敏感用户数"
+            },
+            {
+                "列名": "PLAN_OUTAGE_IMP_CONS_NUM",
+                "描述": "计划停运影响重要用户数"
+            },
+            {
+                "列名": "PLAN_OUTAGE_LIVE_CONS_NUM",
+                "描述": "计划停运影响民生用户数"
+            },
+            {
+                "列名": "PLAN_OUTAGE_ZERO_CONS_NUM",
+                "描述": "计划停运影响零用电用户数"
+            },
+            {
+                "列名": "PLAN_OUTAGE_GPC_CONS_NUM",
+                "描述": "计划停运影响光伏用户数"
+            },
+            {
+                "列名": "PLAN_EWSD_CONS_NUM",
+                "描述": "计划停运影响老弱病残用户数"
+            },
+            {
+                "列名": "PLAN_COALTOELEC_CONS_NUM",
+                "描述": "计划停运影响煤改电用户数"
+            },
+            {
+                "列名": "PLAN_IRRI_CONS_NUM",
+                "描述": "计划停运影响农灌用户数"
+            },
+            {
+                "列名": "PLAN_ELECHEAT_CONS_NUM",
+                "描述": "计划停运影响电采暖用户数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_SEN_CONS_NUM",
+                "描述": "故障停运影响敏感用户数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_IMP_CONS_NUM",
+                "描述": "故障停运影响重要用户数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_LIVE_CONS_NUM",
+                "描述": "故障停运影响民生用户数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_ZERO_CONS_NUM",
+                "描述": "故障停运影响零用电用户数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_GPC_CONS_NUM",
+                "描述": "故障停运影响光伏用户数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_EWSD_CONS_NUM",
+                "描述": "故障停运影响老弱病残用户数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_COALTOELEC_CONS_NUM",
+                "描述": "故障停运影响煤改电用户数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_IRRI_CONS_NUM",
+                "描述": "故障停运影响农灌用户数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_ELECHEAT_CONS_NUM",
+                "描述": "故障停运影响电采暖用户数"
+            },
+            {
+                "列名": "INVL_OUTAGE_GPC_CONS_TIMES",
+                "描述": "涉及光伏用户停运次数"
+            },
+            {
+                "列名": "INVL_OUTAGE_ZERO_CONS_TIMES",
+                "描述": "涉及零用电用户停运次数"
+            },
+            {
+                "列名": "INVL_OUTAGE_LIVE_CONS_TIMES",
+                "描述": "涉及民生用户停运次数"
+            },
+            {
+                "列名": "INVL_OUTAGE_IMP_CONS_TIMES",
+                "描述": "涉及重要用户停运次数"
+            },
+            {
+                "列名": "INVL_OUTAGE_SEN_CONS_TIMES",
+                "描述": "涉及敏感用户停运次数"
+            },
+            {
+                "列名": "INVL_OUTAGE_EWSD_CONS_NUM",
+                "描述": "涉及老弱病残用户次数"
+            },
+            {
+                "列名": "INVL_OUTAGE_COALTOELEC_CONS_NUM",
+                "描述": "涉及煤改电用户次数"
+            },
+            {
+                "列名": "INVL_OUTAGE_IRRI_CONS_NUM",
+                "描述": "涉及农灌用户次数"
+            },
+            {
+                "列名": "INVL_OUTAGE_ELECHEAT_CONS_NUM",
+                "描述": "涉及电采暖用户次数"
+            },
+            {
+                "列名": "MID_VOL_HOURS_NUM",
+                "描述": "中压时户数"
+            },
+            {
+                "列名": "LOW_VOL_HOURS_NUM",
+                "描述": "低压时户数"
+            },
+            {
+                "列名": "fault_outage_over_10000_cons_num",
+                "描述": "故障停电超万户次数"
+            },
+            {
+                "列名": "plan_outage_over_10000_cons_num",
+                "描述": "计划停电超万户次数"
+            },
+            {
+                "列名": "POP_TRANSFORMER_NUM",
+                "描述": "当前管辖保电台区数"
+            },
+            {
+                "列名": "GPC_TRANSFORMER_NUM",
+                "描述": "当前管辖光伏台区数"
+            },
+            {
+                "列名": "FAULT_EFEC_POP_TRANS_NUM",
+                "描述": "故障影响保电台区数"
+            },
+            {
+                "列名": "FAULT_EFEC_GPC_TRANS_NUM",
+                "描述": "故障影响光伏台区数"
+            },
+            {
+                "列名": "PLAN_EFEC_POP_TRANS_NUM",
+                "描述": "计划影响保电台区数"
+            },
+            {
+                "列名": "PLAN_EFEC_GPC_TRANS_NUM",
+                "描述": "计划影响光伏台区数"
+            },
+            {
+                "列名": "PATH",
+                "描述": "单位全路径;"
+            },
+            {
+                "列名": "PATH_NAME",
+                "描述": "单位全路径名称;"
+            }
+        ]
+    },
+    "ads_branch_line_outage_static": {
+        "类型": "mysql",
+        "表名": "ads_branch_line_outage_static",
+        "描述": "支线停运事件统计表-设备维度",
+        "属性": [
+            {
+                "列名": "ID",
+                "描述": "主键ID"
+            },
+            {
+                "列名": "BRANCH_LINE_ID",
+                "描述": "支线ID"
+            },
+            {
+                "列名": "BRANCH_LINE_NAME",
+                "描述": "支线名称"
+            },
+            {
+                "列名": "SUBSTATION_ID",
+                "描述": "变电站ID"
+            },
+            {
+                "列名": "SUBSTATION_NAME",
+                "描述": "变电站名称"
+            },
+            {
+                "列名": "LINE_ID",
+                "描述": "线路ID"
+            },
+            {
+                "列名": "LINE_NAME",
+                "描述": "线路名称"
+            },
+            {
+                "列名": "CITY",
+                "描述": "所属地市"
+            },
+            {
+                "列名": "CITY_NAME",
+                "描述": "所属地市名称"
+            },
+            {
+                "列名": "district",
+                "描述": "所属区县、供电中心"
+            },
+            {
+                "列名": "district_name",
+                "描述": "所属区县、供电中心名称"
+            },
+            {
+                "列名": "STATION",
+                "描述": "所属供电所编码"
+            },
+            {
+                "列名": "STATION_NAME",
+                "描述": "所属供电所名称"
+            },
+            {
+                "列名": "DATA_TIME",
+                "描述": "数据时间"
+            },
+            {
+                "列名": "DATE_TYPE",
+                "描述": "时间类别1:年 2:月 3:天"
+            },
+            {
+                "列名": "YEAR",
+                "描述": "年"
+            },
+            {
+                "列名": "MONTH",
+                "描述": "月"
+            },
+            {
+                "列名": "DAY",
+                "描述": "日"
+            },
+            {
+                "列名": "OUTAGE_BRANCH_LINE_TIMES",
+                "描述": "停运支线次数"
+            },
+            {
+                "列名": "PLAN_OUTAGE_BRANCH_LINE_TIMES",
+                "描述": "计划停运支线次数"
+            },
+            {
+                "列名": "PLAN_OUTAGE_PUBLIC_TRANS_NUM",
+                "描述": "计划停运公变数"
+            },
+            {
+                "列名": "PLAN_OUTAGE_PRIVATE_TRANS_NUM",
+                "描述": "计划停运专变数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_BRANCH_LINE_TIMES",
+                "描述": "故障停运支线次数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_PUBLIC_TRANS_NUM",
+                "描述": "故障停运公变数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_PRIVATE_TRANS_NUM",
+                "描述": "故障停运专变数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_CONS_NUM",
+                "描述": "故障停运影响用户数"
+            },
+            {
+                "列名": "PLAN_OUTAGE_CONS_NUM",
+                "描述": "计划停运影响用户数"
+            },
+            {
+                "列名": "PLAN_OUTAGE_SEN_CONS_NUM",
+                "描述": "计划停运影响敏感用户数"
+            },
+            {
+                "列名": "PLAN_OUTAGE_IMP_CONS_NUM",
+                "描述": "计划停运影响重要用户数"
+            },
+            {
+                "列名": "PLAN_OUTAGE_LIVE_CONS_NUM",
+                "描述": "计划停运影响民生用户数"
+            },
+            {
+                "列名": "PLAN_OUTAGE_ZERO_CONS_NUM",
+                "描述": "计划停运影响零用电用户数"
+            },
+            {
+                "列名": "PLAN_OUTAGE_GPC_CONS_NUM",
+                "描述": "计划停运影响光伏用户数"
+            },
+            {
+                "列名": "PLAN_EWSD_CONS_NUM",
+                "描述": "计划停运影响老弱病残用户数"
+            },
+            {
+                "列名": "PLAN_COALTOELEC_CONS_NUM",
+                "描述": "计划停运影响煤改电用户数"
+            },
+            {
+                "列名": "PLAN_IRRI_CONS_NUM",
+                "描述": "计划停运影响农灌用户数"
+            },
+            {
+                "列名": "PLAN_ELECHEAT_CONS_NUM",
+                "描述": "计划停运影响电采暖用户数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_SEN_CONS_NUM",
+                "描述": "故障停运影响敏感用户数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_IMP_CONS_NUM",
+                "描述": "故障停运影响重要用户数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_LIVE_CONS_NUM",
+                "描述": "故障停运影响民生用户数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_ZERO_CONS_NUM",
+                "描述": "故障停运影响零用电用户数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_GPC_CONS_NUM",
+                "描述": "故障停运影响光伏用户数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_EWSD_CONS_NUM",
+                "描述": "故障停运影响老弱病残用户数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_COALTOELEC_CONS_NUM",
+                "描述": "故障停运影响煤改电用户数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_IRRI_CONS_NUM",
+                "描述": "故障停运影响农灌用户数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_ELECHEAT_CONS_NUM",
+                "描述": "故障停运影响电采暖用户数"
+            },
+            {
+                "列名": "POP_TRANSFORMER_NUM",
+                "描述": "当前管辖保电台区数"
+            },
+            {
+                "列名": "GPC_TRANSFORMER_NUM",
+                "描述": "当前管辖光伏台区数"
+            },
+            {
+                "列名": "FAULT_EFEC_POP_TRANS_NUM",
+                "描述": "故障影响保电台区数"
+            },
+            {
+                "列名": "FAULT_EFEC_GPC_TRANS_NUM",
+                "描述": "故障影响光伏台区数"
+            },
+            {
+                "列名": "PLAN_EFEC_POP_TRANS_NUM",
+                "描述": "计划影响保电台区数"
+            },
+            {
+                "列名": "PLAN_EFEC_GPC_TRANS_NUM",
+                "描述": "计划影响光伏台区数"
+            },
+            {
+                "列名": "MID_VOL_HOURS_NUM",
+                "描述": "中压时户数"
+            },
+            {
+                "列名": "LOW_VOL_HOURS_NUM",
+                "描述": "低压时户数"
+            },
+            {
+                "列名": "PATH",
+                "描述": "单位全路径;"
+            },
+            {
+                "列名": "PATH_NAME",
+                "描述": "单位全路径名称;"
+            }
+        ]
+    },
+    "ads_line_abnormal_event": {
+        "类型": "mysql",
+        "表名": "ads_line_abnormal_event",
+        "描述": "线路异常事件",
+        "属性": [
+            {
+                "列名": "ID",
+                "描述": "主键ID"
+            },
+            {
+                "列名": "line_abn_event_type",
+                "描述": "线路异常事件大类 1:过载,2:重载,3:轻载,4:空载,5:反送电,6:反向重载,7:反向过载"
+            },
+            {
+                "列名": "LINE_ABN_EVENT_TYPE_NAME",
+                "描述": "线路异常事件大类名称"
+            },
+            {
+                "列名": "EVENT_TIME",
+                "描述": "事件发生时间"
+            },
+            {
+                "列名": "EVENT_DURATION",
+                "描述": "事件发生时长（小时）"
+            },
+            {
+                "列名": "EVENT_DESC",
+                "描述": "事件描述"
+            },
+            {
+                "列名": "CREATE_TIME",
+                "描述": "创建时间"
+            },
+            {
+                "列名": "UPDATE_TIME",
+                "描述": "更新时间"
+            },
+            {
+                "列名": "LINE_ID",
+                "描述": "线路ID"
+            },
+            {
+                "列名": "LINE_NAME",
+                "描述": "线路名称"
+            },
+            {
+                "列名": "VOLTAGE_LEVEL",
+                "描述": "电压等级"
+            },
+            {
+                "列名": "SUBSTATION_ID",
+                "描述": "变电站ID"
+            },
+            {
+                "列名": "SUBSTATION_NAME",
+                "描述": "变电站名称"
+            },
+            {
+                "列名": "CITY",
+                "描述": "所属地市"
+            },
+            {
+                "列名": "CITY_NAME",
+                "描述": "所属地市名称"
+            },
+            {
+                "列名": "district",
+                "描述": "所属区县、供电中心"
+            },
+            {
+                "列名": "district_name",
+                "描述": "所属区县、供电中心名称"
+            },
+            {
+                "列名": "STATION",
+                "描述": "所属供电所编码"
+            },
+            {
+                "列名": "STATION_NAME",
+                "描述": "所属供电所名称"
+            },
+            {
+                "列名": "TEAM",
+                "描述": "班组;"
+            },
+            {
+                "列名": "TEAM_NAME",
+                "描述": "班组名称;"
+            },
+            {
+                "列名": "max_power",
+                "描述": "最大功率（KW·H）"
+            },
+            {
+                "列名": "min_power",
+                "描述": "最小功率（KW·H）"
+            },
+            {
+                "列名": "min_cur",
+                "描述": "最小电流（A）"
+            },
+            {
+                "列名": "max_cur",
+                "描述": "最大电流（A）"
+            },
+            {
+                "列名": "AERIAL_METHOD",
+                "描述": "架空接线方式 1单辐射 2 单联络 3 多联络"
+            },
+            {
+                "列名": "AERIAL_METHOD_NAME",
+                "描述": "架空接线方式名称"
+            },
+            {
+                "列名": "LINE_TYPE",
+                "描述": "线路类型：38601架空38602电缆38603混合"
+            },
+            {
+                "列名": "LINE_TYPE_NAME",
+                "描述": "线路类型名称"
+            },
+            {
+                "列名": "LINE_FLAG",
+                "描述": "线路类别标识：1城区 2农村 3工业园；0未配置"
+            },
+            {
+                "列名": "LINE_FLAG_NAME",
+                "描述": "线路类别标识名称"
+            },
+            {
+                "列名": "LINE_NATURE",
+                "描述": "线路性质：1--地市公司运维；2-县公司运维；3--用户运维"
+            },
+            {
+                "列名": "LINE_NATURE_NAME",
+                "描述": "线路性质名称"
+            },
+            {
+                "列名": "line_length",
+                "描述": "线路长度(KM)"
+            },
+            {
+                "列名": "PSR_ID",
+                "描述": "资源编码"
+            },
+            {
+                "列名": "RATED_CUR",
+                "描述": "额定电流(A);"
+            },
+            {
+                "列名": "EQUIPMENT_OWNER_ID",
+                "描述": "设备主人ID"
+            },
+            {
+                "列名": "EQUIPMENT_OWNER_NAME",
+                "描述": "设备主人名称"
+            },
+            {
+                "列名": "EQUIPMENT_OWNER_TEL",
+                "描述": "设备主人电话"
+            },
+            {
+                "列名": "MAX_LOAD_RATE",
+                "描述": "最大负载率;"
+            },
+            {
+                "列名": "REV_POWER",
+                "描述": "反向功率(KW·H);"
+            },
+            {
+                "列名": "MAX_REV_LOAD_RATE",
+                "描述": "最大反向负载率;"
+            },
+            {
+                "列名": "PATH",
+                "描述": "单位全路径;"
+            },
+            {
+                "列名": "PATH_NAME",
+                "描述": "单位全路径名称;"
+            }
+        ]
+    },
+    "ads_line_abnormal_org_static": {
+        "类型": "mysql",
+        "表名": "ads_line_abnormal_org_static",
+        "描述": "线路异常事件统计表-单位维度",
+        "属性": [
+            {
+                "列名": "ID",
+                "描述": "主键ID"
+            },
+            {
+                "列名": "CITY",
+                "描述": "所属地市"
+            },
+            {
+                "列名": "CITY_NAME",
+                "描述": "所属地市名称"
+            },
+            {
+                "列名": "district",
+                "描述": "所属区县、供电中心"
+            },
+            {
+                "列名": "district_name",
+                "描述": "所属区县、供电中心名称"
+            },
+            {
+                "列名": "STATION",
+                "描述": "所属供电所编码"
+            },
+            {
+                "列名": "STATION_NAME",
+                "描述": "所属供电所名称"
+            },
+            {
+                "列名": "DATA_TIME",
+                "描述": "数据时间"
+            },
+            {
+                "列名": "DATE_TYPE",
+                "描述": "时间类别1:年 2:月 3:天"
+            },
+            {
+                "列名": "YEAR",
+                "描述": "年"
+            },
+            {
+                "列名": "MONTH",
+                "描述": "月"
+            },
+            {
+                "列名": "DAY",
+                "描述": "日"
+            },
+            {
+                "列名": "LINE_ABNORMAL_NUM",
+                "描述": "线路异常条数"
+            },
+            {
+                "列名": "LINE_OVER_LOAD_NUM",
+                "描述": "线路过载条数"
+            },
+            {
+                "列名": "LINE_HEAVY_LOAD_NUM",
+                "描述": "线路重载条数"
+            },
+            {
+                "列名": "LINE_LIGHT_LOAD_NUM",
+                "描述": "线路轻载条数"
+            },
+            {
+                "列名": "LINE_EMPTY_LOAD_NUM",
+                "描述": "线路空载条数"
+            },
+            {
+                "列名": "LINE_LOSS_ABNORMAL_NUM",
+                "描述": "线路线损异常条数"
+            },
+            {
+                "列名": "LINE_ABNORMAL_TIMES",
+                "描述": "线路异常次数"
+            },
+            {
+                "列名": "LINE_OVER_LOAD_TIMES",
+                "描述": "线路过载次数"
+            },
+            {
+                "列名": "LINE_HEAVY_LOAD_TIMES",
+                "描述": "线路重载次数"
+            },
+            {
+                "列名": "LINE_LIGHT_LOAD_TIMES",
+                "描述": "线路轻载次数"
+            },
+            {
+                "列名": "LINE_EMPTY_LOAD_TIMES",
+                "描述": "线路空载次数"
+            },
+            {
+                "列名": "LINE_LOSS_ABNORMAL_TIMES",
+                "描述": "线路线损异常次数"
+            },
+            {
+                "列名": "LINE_REVERSE_POWER_TIMES",
+                "描述": "线路反送次数"
+            },
+            {
+                "列名": "LINE_REVERSE_POWER_NUM",
+                "描述": "线路反送条数"
+            },
+            {
+                "列名": "LINE_REVOVER_LOAD_TIMES",
+                "描述": "线路反向过载次数;"
+            },
+            {
+                "列名": "LINE_REVOVER_LOAD_NUM",
+                "描述": "线路反向过载条数;"
+            },
+            {
+                "列名": "LINE_REVHEAVY_LOAD_TIMES",
+                "描述": "线路反向重载次数;"
+            },
+            {
+                "列名": "LINE_REVHEAVY_LOAD_NUM",
+                "描述": "线路反向重载条数;"
+            },
+            {
+                "列名": "CREATE_TIME",
+                "描述": "创建时间;"
+            },
+            {
+                "列名": "UPDATE_TIME",
+                "描述": "更新时间;"
+            },
+            {
+                "列名": "PATH",
+                "描述": "单位全路径;"
+            },
+            {
+                "列名": "PATH_NAME",
+                "描述": "单位全路径名称;"
+            },
+            {
+                "列名": "LINE_OVER_LOAD_DUR",
+                "描述": "线路过载总时长（小时）;"
+            },
+            {
+                "列名": "LINE_HEAVY_LOAD_DUR",
+                "描述": "线路重载总时长（小时）;"
+            },
+            {
+                "列名": "LINE_REVOVER_LOAD_DUR",
+                "描述": "线路反向过载总时长（小时）;"
+            },
+            {
+                "列名": "LINE_REVHEAVY_LOAD_DUR",
+                "描述": "线路反向重载总时长（小时）;"
+            },
+            {
+                "列名": "LINE_EMPTY_LOAD_DUR",
+                "描述": "线路空载总时长（小时）;"
+            },
+            {
+                "列名": "LINE_LIGHT_LOAD_DUR",
+                "描述": "线路轻载总时长（小时）;"
+            }
+        ]
+    },
+    "ads_line_abnormal_static": {
+        "类型": "mysql",
+        "表名": "ads_line_abnormal_static",
+        "描述": "线路异常事件统计表-设备维度",
+        "属性": [
+            {
+                "列名": "ID",
+                "描述": "主键ID"
+            },
+            {
+                "列名": "SUBSTATION_ID",
+                "描述": "变电站ID"
+            },
+            {
+                "列名": "SUBSTATION_NAME",
+                "描述": "变电站名称"
+            },
+            {
+                "列名": "LINE_ID",
+                "描述": "线路ID"
+            },
+            {
+                "列名": "LINE_NAME",
+                "描述": "线路名称"
+            },
+            {
+                "列名": "CITY",
+                "描述": "所属地市"
+            },
+            {
+                "列名": "CITY_NAME",
+                "描述": "所属地市名称"
+            },
+            {
+                "列名": "district",
+                "描述": "所属区县、供电中心"
+            },
+            {
+                "列名": "district_name",
+                "描述": "所属区县、供电中心名称"
+            },
+            {
+                "列名": "STATION",
+                "描述": "所属供电所编码"
+            },
+            {
+                "列名": "STATION_NAME",
+                "描述": "所属供电所名称"
+            },
+            {
+                "列名": "DATA_TIME",
+                "描述": "数据时间"
+            },
+            {
+                "列名": "DATE_TYPE",
+                "描述": "时间类别1:年 2:月 3:天"
+            },
+            {
+                "列名": "YEAR",
+                "描述": "年"
+            },
+            {
+                "列名": "MONTH",
+                "描述": "月"
+            },
+            {
+                "列名": "DAY",
+                "描述": "日"
+            },
+            {
+                "列名": "LINE_ABNORMAL_TIMES",
+                "描述": "线路异常次数"
+            },
+            {
+                "列名": "LINE_OVER_LOAD_TIMES",
+                "描述": "线路过载次数"
+            },
+            {
+                "列名": "LINE_HEAVY_LOAD_TIMES",
+                "描述": "线路重载次数"
+            },
+            {
+                "列名": "LINE_LIGHT_LOAD_TIMES",
+                "描述": "线路轻载次数"
+            },
+            {
+                "列名": "LINE_EMPTY_LOAD_TIMES",
+                "描述": "线路空载次数"
+            },
+            {
+                "列名": "LINE_LOSS_ABNORMAL_TIMES",
+                "描述": "线路线损异常次数"
+            },
+            {
+                "列名": "LINE_REVERSE_POWER_TIMES",
+                "描述": "线路反送次数"
+            },
+            {
+                "列名": "LINE_REVOVER_LOAD_TIMES",
+                "描述": "线路反向过载次数;"
+            },
+            {
+                "列名": "LINE_REVHEAVY_LOAD_TIMES",
+                "描述": "线路反向重载次数;"
+            },
+            {
+                "列名": "CREATE_TIME",
+                "描述": "创建时间;"
+            },
+            {
+                "列名": "UPDATE_TIME",
+                "描述": "更新时间;"
+            },
+            {
+                "列名": "PATH",
+                "描述": "单位全路径;"
+            },
+            {
+                "列名": "PATH_NAME",
+                "描述": "单位全路径名称;"
+            }
+        ]
+    },
+    "ads_line_outage_event": {
+        "类型": "mysql",
+        "表名": "ads_line_outage_event",
+        "描述": "线路停运事件",
+        "属性": [
+            {
+                "列名": "ID",
+                "描述": "主键ID"
+            },
+            {
+                "列名": "LINE_ID",
+                "描述": "线路ID"
+            },
+            {
+                "列名": "LINE_NAME",
+                "描述": "线路名称"
+            },
+            {
+                "列名": "SUBSTATION_ID",
+                "描述": "变电站ID"
+            },
+            {
+                "列名": "SUBSTATION_NAME",
+                "描述": "变电站名称"
+            },
+            {
+                "列名": "CITY",
+                "描述": "所属地市"
+            },
+            {
+                "列名": "CITY_NAME",
+                "描述": "所属地市名称"
+            },
+            {
+                "列名": "district",
+                "描述": "所属区县、供电中心"
+            },
+            {
+                "列名": "district_name",
+                "描述": "所属区县、供电中心名称"
+            },
+            {
+                "列名": "STATION",
+                "描述": "所属供电所编码"
+            },
+            {
+                "列名": "STATION_NAME",
+                "描述": "所属供电所名称"
+            },
+            {
+                "列名": "TEAM",
+                "描述": "班组"
+            },
+            {
+                "列名": "TEAM_NAME",
+                "描述": "班组名称"
+            },
+            {
+                "列名": "EQUIPMENT_OWNER_ID",
+                "描述": "设备主人ID"
+            },
+            {
+                "列名": "EQUIPMENT_OWNER_TEL",
+                "描述": "设备主人电话"
+            },
+            {
+                "列名": "EQUIPMENT_OWNER_NAME",
+                "描述": "设备主人名称"
+            },
+            {
+                "列名": "OUTAGE_EVENT_TYPE",
+                "描述": "停运事件大类：1:故障，2:计划"
+            },
+            {
+                "列名": "OUTAGE_EVENT_TYPE_NAME",
+                "描述": "停运事件大类名称"
+            },
+            {
+                "列名": "OUTAGE_REASON",
+                "描述": "停电原因"
+            },
+            {
+                "列名": "EVENT_TIME",
+                "描述": "事件发生时间"
+            },
+            {
+                "列名": "POWER_ON_TIME",
+                "描述": "上电时间"
+            },
+            {
+                "列名": "EVENT_DURATION",
+                "描述": "事件发生时长（小时）"
+            },
+            {
+                "列名": "LINE_NATURE",
+                "描述": "线路性质：1--地市公司运维；2-县公司运维；3--用户运维"
+            },
+            {
+                "列名": "LINE_NATURE_NAME",
+                "描述": "线路性质名称"
+            },
+            {
+                "列名": "BRANCH_LINE_NUM",
+                "描述": "当前管辖支线数"
+            },
+            {
+                "列名": "PUBLIC_TRANSFORMER_NUM",
+                "描述": "当前管辖公变数"
+            },
+            {
+                "列名": "PRIVATE_TRANSFORMER_NUM",
+                "描述": "当前管辖专变数"
+            },
+            {
+                "列名": "CONS_NUM",
+                "描述": "当前管辖用户数"
+            },
+            {
+                "列名": "IMP_CONS_NUM",
+                "描述": "当前管辖重要用户数"
+            },
+            {
+                "列名": "SEN_CONS_NUM",
+                "描述": "当前管辖敏感用户数"
+            },
+            {
+                "列名": "LIVELIHOOD_CONS_COUNT",
+                "描述": "当前管辖民生用户数"
+            },
+            {
+                "列名": "ZERO_HOUSEHOLD_TRANSFER",
+                "描述": "当前管辖零用电用户数"
+            },
+            {
+                "列名": "GPC_CONS_NUM",
+                "描述": "当前管辖光伏用户数"
+            },
+            {
+                "列名": "EWSD_CONS_COUNT",
+                "描述": "当前管辖老弱病残用户数"
+            },
+            {
+                "列名": "COALTOELEC_CONS_COUNT",
+                "描述": "当前管辖煤改电用户数"
+            },
+            {
+                "列名": "IRRI_CONS_COUNT",
+                "描述": "当前管辖农灌用户数"
+            },
+            {
+                "列名": "ELECHEAT_CONS_COUNT",
+                "描述": "当前管辖电采暖用户数"
+            },
+            {
+                "列名": "POP_TRANSFORMER_NUM",
+                "描述": "当前管辖保电台区数"
+            },
+            {
+                "列名": "GPC_TRANSFORMER_NUM",
+                "描述": "当前管辖光伏台区数"
+            },
+            {
+                "列名": "EFFECT_BRANCH_LINE_NUM",
+                "描述": "影响支线数"
+            },
+            {
+                "列名": "EFFECT_PUB_TRANS_NUM",
+                "描述": "影响公变数"
+            },
+            {
+                "列名": "EFFECT_PRI_TRANS_NUM",
+                "描述": "影响专变数"
+            },
+            {
+                "列名": "EFFECT_CONS_NUM",
+                "描述": "影响用户数"
+            },
+            {
+                "列名": "EFFECT_IMP_CONS_NUM",
+                "描述": "影响重要用户数"
+            },
+            {
+                "列名": "EFFECT_SEN_CONS_NUM",
+                "描述": "影响敏感用户数"
+            },
+            {
+                "列名": "EFFECT_LIVELIHOOD_CONS_COUNT",
+                "描述": "影响民生用户数"
+            },
+            {
+                "列名": "EFFECT_ZERO_HOUSEHOLD_TRANSFER",
+                "描述": "影响零用电用户数"
+            },
+            {
+                "列名": "EFFECT_GPC_CONS_NUM",
+                "描述": "影响光伏用户数"
+            },
+            {
+                "列名": "EFFECT_EWSD_CONS_COUNT",
+                "描述": "影响老弱病残用户数"
+            },
+            {
+                "列名": "EFFECT_COALTOELEC_CONS_COUNT",
+                "描述": "影响煤改电用户数"
+            },
+            {
+                "列名": "EFFECT_IRRI_CONS_COUNT",
+                "描述": "影响农灌用户数"
+            },
+            {
+                "列名": "EFFECT_ELECHEAT_CONS_COUNT",
+                "描述": "影响电采暖用户数"
+            },
+            {
+                "列名": "EFFECT_POP_TRANSFORMER_NUM",
+                "描述": "影响保电台区数"
+            },
+            {
+                "列名": "EFFECT_GPC_TRANSFORMER_NUM",
+                "描述": "影响光伏台区数"
+            },
+            {
+                "列名": "MID_VOL_HOURS_NUM",
+                "描述": "中压时户数（冻结）"
+            },
+            {
+                "列名": "LOW_VOL_HOURS_NUM",
+                "描述": "低压时户数（冻结）"
+            },
+            {
+                "列名": "FAULT_ORDER_NUM",
+                "描述": "故障报修工单总数量"
+            },
+            {
+                "列名": "PROACTIVE_REPAIR_ORDER_NUM",
+                "描述": "主动抢修工单总数量"
+            },
+            {
+                "列名": "COMPLAIN_ORDER_NUM",
+                "描述": "投诉工单总数量"
+            },
+            {
+                "列名": "OUTAGE_INFO_NUM",
+                "描述": "停电信息已发布工单数"
+            },
+            {
+                "列名": "OPINION_ORDER_NUM",
+                "描述": "意见工单数"
+            },
+            {
+                "列名": "is_power",
+                "描述": "是否复电: 0,否 1,是"
+            },
+            {
+                "列名": "IS_POWER_NAME",
+                "描述": "是否复电（中文）"
+            },
+            {
+                "列名": "LESS_POWER_SUPPLY",
+                "描述": "少供电量"
+            },
+            {
+                "列名": "PATH",
+                "描述": "单位全路径;"
+            },
+            {
+                "列名": "PATH_NAME",
+                "描述": "单位全路径名称;"
+            }
+        ]
+    },
+    "ads_line_outage_org_static": {
+        "类型": "mysql",
+        "表名": "ads_line_outage_org_static",
+        "描述": "线路停运事件统计表-单位维度",
+        "属性": [
+            {
+                "列名": "ID",
+                "描述": "主键ID"
+            },
+            {
+                "列名": "CITY",
+                "描述": "所属地市"
+            },
+            {
+                "列名": "CITY_NAME",
+                "描述": "所属地市名称"
+            },
+            {
+                "列名": "district",
+                "描述": "所属区县、供电中心"
+            },
+            {
+                "列名": "district_name",
+                "描述": "所属区县、供电中心名称"
+            },
+            {
+                "列名": "STATION",
+                "描述": "所属供电所编码"
+            },
+            {
+                "列名": "STATION_NAME",
+                "描述": "所属供电所名称"
+            },
+            {
+                "列名": "DATA_TIME",
+                "描述": "数据时间"
+            },
+            {
+                "列名": "DATE_TYPE",
+                "描述": "时间类别1:年 2:月 3:天"
+            },
+            {
+                "列名": "YEAR",
+                "描述": "年"
+            },
+            {
+                "列名": "MONTH",
+                "描述": "月"
+            },
+            {
+                "列名": "DAY",
+                "描述": "日"
+            },
+            {
+                "列名": "LINE_NUM",
+                "描述": "当前管辖线路数"
+            },
+            {
+                "列名": "OUTAGE_LINE_NUM",
+                "描述": "停运线路条数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_LINE_NUM",
+                "描述": "故障停运线路条数"
+            },
+            {
+                "列名": "PLAN_OUTAGE_LINE_NUM",
+                "描述": "计划停运线路条数"
+            },
+            {
+                "列名": "OUTAGE_LINE_TIMES",
+                "描述": "线路停运次数"
+            },
+            {
+                "列名": "PLAN_OUTAGE_LINE_TIMES",
+                "描述": "线路计划停运次数"
+            },
+            {
+                "列名": "PLAN_OUTAGE_PUBLIC_TRANS_NUM",
+                "描述": "计划停运公变次数"
+            },
+            {
+                "列名": "PLAN_OUTAGE_PRIVATE_TRANS_NUM",
+                "描述": "计划停运专变次数"
+            },
+            {
+                "列名": "PLAN_OUTAGE_RATE",
+                "描述": "计划停运率"
+            },
+            {
+                "列名": "FAULT_OUTAGE_LINE_TIMES",
+                "描述": "线路故障停运次数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_PUBLIC_TRANS_NUM",
+                "描述": "故障停运公变次数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_PRIVATE_TRANS_NUM",
+                "描述": "故障停运专变次数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_RATE",
+                "描述": "故障停运率"
+            },
+            {
+                "列名": "POWERON_OUTAGE_NUM",
+                "描述": "已复电停运数;"
+            },
+            {
+                "列名": "POWEROFF_OUTAGE_NUM",
+                "描述": "未复电停运数;"
+            },
+            {
+                "列名": "FAULT_ON_OUTAGE_NUM",
+                "描述": "故障已复电停运数;"
+            },
+            {
+                "列名": "FAULT_OFF_OUTAGE_NUM",
+                "描述": "故障未复电停运数;"
+            },
+            {
+                "列名": "PLAN_ON_OUTAGE_NUM",
+                "描述": "计划已复电停运数;"
+            },
+            {
+                "列名": "PLAN_OFF_OUTAGE_NUM",
+                "描述": "计划未复电停运数;"
+            },
+            {
+                "列名": "FAULT_OUTAGE_CONS_NUM",
+                "描述": "故障停运影响用户数"
+            },
+            {
+                "列名": "PLAN_OUTAGE_CONS_NUM",
+                "描述": "计划停运影响用户数"
+            },
+            {
+                "列名": "PLAN_OUTAGE_SEN_CONS_NUM",
+                "描述": "计划停运影响敏感用户数"
+            },
+            {
+                "列名": "PLAN_OUTAGE_IMP_CONS_NUM",
+                "描述": "计划停运影响重要用户数"
+            },
+            {
+                "列名": "PLAN_OUTAGE_LIVE_CONS_NUM",
+                "描述": "计划停运影响民生用户数"
+            },
+            {
+                "列名": "PLAN_OUTAGE_ZERO_CONS_NUM",
+                "描述": "计划停运影响零用电用户数"
+            },
+            {
+                "列名": "PLAN_OUTAGE_GPC_CONS_NUM",
+                "描述": "计划停运影响光伏用户数"
+            },
+            {
+                "列名": "PLAN_EWSD_CONS_NUM",
+                "描述": "计划停运影响老弱病残用户数"
+            },
+            {
+                "列名": "PLAN_COALTOELEC_CONS_NUM",
+                "描述": "计划停运影响煤改电用户数"
+            },
+            {
+                "列名": "PLAN_IRRI_CONS_NUM",
+                "描述": "计划停运影响农灌用户数"
+            },
+            {
+                "列名": "PLAN_ELECHEAT_CONS_NUM",
+                "描述": "计划停运影响电采暖用户数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_SEN_CONS_NUM",
+                "描述": "故障停运影响敏感用户数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_IMP_CONS_NUM",
+                "描述": "故障停运影响重要用户数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_LIVE_CONS_NUM",
+                "描述": "故障停运影响民生用户数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_ZERO_CONS_NUM",
+                "描述": "故障停运影响零用电用户数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_GPC_CONS_NUM",
+                "描述": "故障停运影响光伏用户数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_EWSD_CONS_NUM",
+                "描述": "故障停运影响老弱病残用户数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_COALTOELEC_CONS_NUM",
+                "描述": "故障停运影响煤改电用户数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_IRRI_CONS_NUM",
+                "描述": "故障停运影响农灌用户数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_ELECHEAT_CONS_NUM",
+                "描述": "故障停运影响电采暖用户数"
+            },
+            {
+                "列名": "INVL_OUTAGE_GPC_CONS_TIMES",
+                "描述": "涉及光伏用户停运次数"
+            },
+            {
+                "列名": "INVL_OUTAGE_ZERO_CONS_TIMES",
+                "描述": "涉及零用电用户停运次数"
+            },
+            {
+                "列名": "INVL_OUTAGE_LIVE_CONS_TIMES",
+                "描述": "涉及民生用户停运次数"
+            },
+            {
+                "列名": "INVL_OUTAGE_IMP_CONS_TIMES",
+                "描述": "涉及重要用户停运次数"
+            },
+            {
+                "列名": "INVL_OUTAGE_SEN_CONS_TIMES",
+                "描述": "涉及敏感用户停运次数"
+            },
+            {
+                "列名": "INVL_OUTAGE_EWSD_CONS_NUM",
+                "描述": "涉及老弱病残用户次数"
+            },
+            {
+                "列名": "INVL_OUTAGE_COALTOELEC_CONS_NUM",
+                "描述": "涉及煤改电用户次数"
+            },
+            {
+                "列名": "INVL_OUTAGE_IRRI_CONS_NUM",
+                "描述": "涉及农灌用户次数"
+            },
+            {
+                "列名": "INVL_OUTAGE_ELECHEAT_CONS_NUM",
+                "描述": "涉及电采暖用户次数"
+            },
+            {
+                "列名": "MID_VOL_HOURS_NUM",
+                "描述": "中压时户数"
+            },
+            {
+                "列名": "LOW_VOL_HOURS_NUM",
+                "描述": "低压时户数"
+            },
+            {
+                "列名": "fault_outage_over_10000_cons_num",
+                "描述": "故障停电超万户次数"
+            },
+            {
+                "列名": "plan_outage_over_10000_cons_num",
+                "描述": "计划停电超万户次数"
+            },
+            {
+                "列名": "POP_TRANSFORMER_NUM",
+                "描述": "当前管辖保电台区数"
+            },
+            {
+                "列名": "GPC_TRANSFORMER_NUM",
+                "描述": "当前管辖光伏台区数"
+            },
+            {
+                "列名": "FAULT_EFEC_POP_TRANS_NUM",
+                "描述": "故障影响保电台区数"
+            },
+            {
+                "列名": "FAULT_EFEC_GPC_TRANS_NUM",
+                "描述": "故障影响光伏台区数"
+            },
+            {
+                "列名": "PLAN_EFEC_POP_TRANS_NUM",
+                "描述": "计划影响保电台区数"
+            },
+            {
+                "列名": "PLAN_EFEC_GPC_TRANS_NUM",
+                "描述": "计划影响光伏台区数"
+            },
+            {
+                "列名": "PATH",
+                "描述": "单位全路径;"
+            },
+            {
+                "列名": "PATH_NAME",
+                "描述": "单位全路径名称;"
+            }
+        ]
+    },
+    "ads_line_outage_static": {
+        "类型": "mysql",
+        "表名": "ads_line_outage_static",
+        "描述": "线路停运事件统计表-设备维度",
+        "属性": [
+            {
+                "列名": "ID",
+                "描述": "主键ID"
+            },
+            {
+                "列名": "SUBSTATION_ID",
+                "描述": "变电站ID"
+            },
+            {
+                "列名": "SUBSTATION_NAME",
+                "描述": "变电站名称"
+            },
+            {
+                "列名": "LINE_ID",
+                "描述": "线路ID"
+            },
+            {
+                "列名": "LINE_NAME",
+                "描述": "线路名称"
+            },
+            {
+                "列名": "CITY",
+                "描述": "所属地市"
+            },
+            {
+                "列名": "CITY_NAME",
+                "描述": "所属地市名称"
+            },
+            {
+                "列名": "district",
+                "描述": "所属区县、供电中心"
+            },
+            {
+                "列名": "district_name",
+                "描述": "所属区县、供电中心名称"
+            },
+            {
+                "列名": "STATION",
+                "描述": "所属供电所编码"
+            },
+            {
+                "列名": "STATION_NAME",
+                "描述": "所属供电所名称"
+            },
+            {
+                "列名": "DATA_TIME",
+                "描述": "数据时间"
+            },
+            {
+                "列名": "DATE_TYPE",
+                "描述": "时间类别1:年 2:月 3:天"
+            },
+            {
+                "列名": "YEAR",
+                "描述": "年"
+            },
+            {
+                "列名": "MONTH",
+                "描述": "月"
+            },
+            {
+                "列名": "DAY",
+                "描述": "日"
+            },
+            {
+                "列名": "OUTAGE_LINE_TIMES",
+                "描述": "线路停运次数"
+            },
+            {
+                "列名": "PLAN_OUTAGE_LINE_TIMES",
+                "描述": "线路计划停运次数"
+            },
+            {
+                "列名": "PLAN_OUTAGE_PUBLIC_TRANS_NUM",
+                "描述": "计划停运公变数"
+            },
+            {
+                "列名": "PLAN_OUTAGE_PRIVATE_TRANS_NUM",
+                "描述": "计划停运专变数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_LINE_TIMES",
+                "描述": "线路故障停运次数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_PUBLIC_TRANS_NUM",
+                "描述": "故障停运公变数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_PRIVATE_TRANS_NUM",
+                "描述": "故障停运专变数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_CONS_NUM",
+                "描述": "故障停运影响用户数"
+            },
+            {
+                "列名": "PLAN_OUTAGE_CONS_NUM",
+                "描述": "计划停运影响用户数"
+            },
+            {
+                "列名": "PLAN_OUTAGE_SEN_CONS_NUM",
+                "描述": "计划停运影响敏感用户数"
+            },
+            {
+                "列名": "PLAN_OUTAGE_IMP_CONS_NUM",
+                "描述": "计划停运影响重要用户数"
+            },
+            {
+                "列名": "PLAN_OUTAGE_LIVE_CONS_NUM",
+                "描述": "计划停运影响民生用户数"
+            },
+            {
+                "列名": "PLAN_OUTAGE_ZERO_CONS_NUM",
+                "描述": "计划停运影响零用电用户数"
+            },
+            {
+                "列名": "PLAN_OUTAGE_GPC_CONS_NUM",
+                "描述": "计划停运影响光伏用户数"
+            },
+            {
+                "列名": "PLAN_EWSD_CONS_NUM",
+                "描述": "计划停运影响老弱病残用户数"
+            },
+            {
+                "列名": "PLAN_COALTOELEC_CONS_NUM",
+                "描述": "计划停运影响煤改电用户数"
+            },
+            {
+                "列名": "PLAN_IRRI_CONS_NUM",
+                "描述": "计划停运影响农灌用户数"
+            },
+            {
+                "列名": "PLAN_ELECHEAT_CONS_NUM",
+                "描述": "计划停运影响电采暖用户数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_SEN_CONS_NUM",
+                "描述": "故障停运影响敏感用户数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_IMP_CONS_NUM",
+                "描述": "故障停运影响重要用户数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_LIVE_CONS_NUM",
+                "描述": "故障停运影响民生用户数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_ZERO_CONS_NUM",
+                "描述": "故障停运影响零用电用户数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_GPC_CONS_NUM",
+                "描述": "故障停运影响光伏用户数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_EWSD_CONS_NUM",
+                "描述": "故障停运影响老弱病残用户数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_COALTOELEC_CONS_NUM",
+                "描述": "故障停运影响煤改电用户数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_IRRI_CONS_NUM",
+                "描述": "故障停运影响农灌用户数"
+            },
+            {
+                "列名": "FAULT_OUTAGE_ELECHEAT_CONS_NUM",
+                "描述": "故障停运影响电采暖用户数"
+            },
+            {
+                "列名": "POP_TRANSFORMER_NUM",
+                "描述": "当前管辖保电台区数"
+            },
+            {
+                "列名": "GPC_TRANSFORMER_NUM",
+                "描述": "当前管辖光伏台区数"
+            },
+            {
+                "列名": "FAULT_EFEC_POP_TRANS_NUM",
+                "描述": "故障影响保电台区数"
+            },
+            {
+                "列名": "FAULT_EFEC_GPC_TRANS_NUM",
+                "描述": "故障影响光伏台区数"
+            },
+            {
+                "列名": "PLAN_EFEC_POP_TRANS_NUM",
+                "描述": "计划影响保电台区数"
+            },
+            {
+                "列名": "PLAN_EFEC_GPC_TRANS_NUM",
+                "描述": "计划影响光伏台区数"
+            },
+            {
+                "列名": "MID_VOL_HOURS_NUM",
+                "描述": "中压时户数"
+            },
+            {
+                "列名": "LOW_VOL_HOURS_NUM",
+                "描述": "低压时户数"
+            },
+            {
+                "列名": "PATH",
+                "描述": "单位全路径;"
+            },
+            {
+                "列名": "PATH_NAME",
+                "描述": "单位全路径名称;"
+            }
+        ]
+    },
+    "ads_trans_abnormal_event": {
+        "类型": "mysql",
+        "表名": "ads_trans_abnormal_event",
+        "描述": "配变异常事件",
+        "属性": [
+            {
+                "列名": "ID",
+                "描述": "主键ID"
+            },
+            {
+                "列名": "TRANS_ABN_EVENT_TYPE",
+                "描述": "配变异常事件大类 1:过载,2:重载,3:轻载,4:空载,5:低电压,6:过电压,7:三相不平衡,8:反向过载,9:反向重载,10:反向低电压,11:反向过电压,12:反送电"
+            },
+            {
+                "列名": "TRANS_ABN_EVENT_TYPE_NAME",
+                "描述": "配变异常事件大类名称"
+            },
+            {
+                "列名": "EVENT_TIME",
+                "描述": "事件发生时间"
+            },
+            {
+                "列名": "EVENT_DURATION",
+                "描述": "事件发生时长（小时）"
+            },
+            {
+                "列名": "EVENT_DESC",
+                "描述": "事件描述"
+            },
+            {
+                "列名": "CREATE_TIME",
+                "描述": "创建时间"
+            },
+            {
+                "列名": "UPDATE_TIME",
+                "描述": "更新时间;"
+            },
+            {
+                "列名": "TG_ID",
+                "描述": "台区ID"
+            },
+            {
+                "列名": "TG_NO",
+                "描述": "台区编号"
+            },
+            {
+                "列名": "TG_NAME",
+                "描述": "台区名称"
+            },
+            {
+                "列名": "VOLTAGE_LEVEL",
+                "描述": "电压等级"
+            },
+            {
+                "列名": "PUB_PRIV_FLAG",
+                "描述": "公专变标识 01.公变 02.专变"
+            },
+            {
+                "列名": "PUB_PRIV_FLAG_NAME",
+                "描述": "公专变标识 (中文)"
+            },
+            {
+                "列名": "CITY",
+                "描述": "所属地市"
+            },
+            {
+                "列名": "CITY_NAME",
+                "描述": "所属地市名称"
+            },
+            {
+                "列名": "district",
+                "描述": "所属区县、供电中心"
+            },
+            {
+                "列名": "district_name",
+                "描述": "所属区县、供电中心名称"
+            },
+            {
+                "列名": "STATION",
+                "描述": "所属供电所编码"
+            },
+            {
+                "列名": "STATION_NAME",
+                "描述": "所属供电所名称"
+            },
+            {
+                "列名": "TEAM",
+                "描述": "班组;"
+            },
+            {
+                "列名": "TEAM_NAME",
+                "描述": "班组名称;"
+            },
+            {
+                "列名": "SUBSTATION_ID",
+                "描述": "变电站ID"
+            },
+            {
+                "列名": "SUBSTATION_NAME",
+                "描述": "变电站名称"
+            },
+            {
+                "列名": "LINE_ID",
+                "描述": "线路ID"
+            },
+            {
+                "列名": "LINE_NAME",
+                "描述": "线路名称"
+            },
+            {
+                "列名": "EQUIPMENT_OWNER_TEL",
+                "描述": "设备主人电话"
+            },
+            {
+                "列名": "CTBB",
+                "描述": "CT变比"
+            },
+            {
+                "列名": "PTBB",
+                "描述": "PT变比"
+            },
+            {
+                "列名": "CAPACITY",
+                "描述": "设备容量"
+            },
+            {
+                "列名": "EQUIPMENT_OWNER_ID",
+                "描述": "设备主人ID"
+            },
+            {
+                "列名": "EQUIPMENT_OWNER_NAME",
+                "描述": "设备主人名称"
+            },
+            {
+                "列名": "MAX_POWER",
+                "描述": "最大功率"
+            },
+            {
+                "列名": "MIN_POWER",
+                "描述": "最小功率"
+            },
+            {
+                "列名": "MAX_VOL",
+                "描述": "最高电压"
+            },
+            {
+                "列名": "MIN_VOL",
+                "描述": "最低电压"
+            },
+            {
+                "列名": "MAX_SXBPHD",
+                "描述": "最大三项不平衡度"
+            },
+            {
+                "列名": "MIN_SXBPHD",
+                "描述": "最小三项不平衡度"
+            },
+            {
+                "列名": "A_MAX_PHASE_LOAD",
+                "描述": "A相最大负载率"
+            },
+            {
+                "列名": "B_MAX_PHASE_LOAD",
+                "描述": "B相最大负载率"
+            },
+            {
+                "列名": "C_MAX_PHASE_LOAD",
+                "描述": "C相最大负载率"
+            },
+            {
+                "列名": "THREE_MAX_PHASE_LOAD",
+                "描述": "三相最大负载率"
+            },
+            {
+                "列名": "ABNORMAL_REASON",
+                "描述": "异常原因"
+            },
+            {
+                "列名": "MAX_CUR_PHASE",
+                "描述": "最大电流相限"
+            },
+            {
+                "列名": "OCCUR_PHASE",
+                "描述": "发生相别"
+            }
+        ]
+    },
+    "ads_trans_abnormal_org_static": {
+        "类型": "mysql",
+        "表名": "ads_trans_abnormal_org_static",
+        "描述": "配变异常事件统计表-单位维度",
+        "属性": [
+            {
+                "列名": "ID",
+                "描述": "主键ID"
+            },
+            {
+                "列名": "CITY",
+                "描述": "所属地市"
+            },
+            {
+                "列名": "CITY_NAME",
+                "描述": "所属地市名称"
+            },
+            {
+                "列名": "district",
+                "描述": "所属区县、供电中心"
+            },
+            {
+                "列名": "district_name",
+                "描述": "所属区县、供电中心名称"
+            },
+            {
+                "列名": "STATION",
+                "描述": "所属供电所编码"
+            },
+            {
+                "列名": "STATION_NAME",
+                "描述": "所属供电所名称"
+            },
+            {
+                "列名": "DATA_TIME",
+                "描述": "数据时间"
+            },
+            {
+                "列名": "DATE_TYPE",
+                "描述": "时间类别1:年 2:月 3:天"
+            },
+            {
+                "列名": "YEAR",
+                "描述": "年"
+            },
+            {
+                "列名": "MONTH",
+                "描述": "月"
+            },
+            {
+                "列名": "DAY",
+                "描述": "日"
+            },
+            {
+                "列名": "PUB_PRIV_FLAG_NAME",
+                "描述": "公专变标识 (中文)"
+            },
+            {
+                "列名": "PUB_PRIV_FLAG",
+                "描述": "公专变标识 01.公变 02.专变"
+            },
+            {
+                "列名": "TRANS_ABNORMAL_NUM",
+                "描述": "配变异常台数"
+            },
+            {
+                "列名": "TRANS_OVER_LOAD_NUM",
+                "描述": "配变过载台数"
+            },
+            {
+                "列名": "TRANS_HEAVY_LOAD_NUM",
+                "描述": "配变重载台数"
+            },
+            {
+                "列名": "TRANS_LIGHT_LOAD_NUM",
+                "描述": "配变轻载台数"
+            },
+            {
+                "列名": "TRANS_EMPTY_LOAD_NUM",
+                "描述": "配变空载台数"
+            },
+            {
+                "列名": "TRANS_LOW_VOL_NUM",
+                "描述": "配变低电压台数"
+            },
+            {
+                "列名": "TRANS_OVER_VOL_NUM",
+                "描述": "配变过电压台数"
+            },
+            {
+                "列名": "TRANS_UNBALANCED_NUM",
+                "描述": "配变三相不平衡台数"
+            },
+            {
+                "列名": "TRANS_REVERSE_OVER_LOAD_NUM",
+                "描述": "配变反向过载台数"
+            },
+            {
+                "列名": "TRANS_REVERSE_HEAVY_LOAD_NUM",
+                "描述": "配变反向重载台数"
+            },
+            {
+                "列名": "TRANS_REVERSE_LOW_VOL_NUM",
+                "描述": "配变反向低电压台数"
+            },
+            {
+                "列名": "TRANS_REVERSE_OVER_VOL_NUM",
+                "描述": "配变反向过电压台数"
+            },
+            {
+                "列名": "TRANS_ABNORMAL_TIMES",
+                "描述": "配变异常次数"
+            },
+            {
+                "列名": "TRANS_OVER_LOAD_TIMES",
+                "描述": "配变过载次数"
+            },
+            {
+                "列名": "TRANS_HEAVY_LOAD_TIMES",
+                "描述": "配变重载次数"
+            },
+            {
+                "列名": "TRANS_LIGHT_LOAD_TIMES",
+                "描述": "配变轻载次数"
+            },
+            {
+                "列名": "TRANS_EMPTY_LOAD_TIMES",
+                "描述": "配变空载次数"
+            },
+            {
+                "列名": "TRANS_LOW_VOL_TIMES",
+                "描述": "配变低电压次数"
+            },
+            {
+                "列名": "TRANS_OVER_VOL_TIMES",
+                "描述": "配变过电压次数"
+            },
+            {
+                "列名": "TRANS_UNBALANCED_TIMES",
+                "描述": "配变三相不平衡次数"
+            },
+            {
+                "列名": "TRANS_REV_OVER_LOAD_TIMES",
+                "描述": "配变反向过载次数"
+            },
+            {
+                "列名": "TRANS_REV_HEAVY_LOAD_TIMES",
+                "描述": "配变反向重载次数"
+            },
+            {
+                "列名": "TRANS_REV_LOW_VOL_TIMES",
+                "描述": "配变反向低电压次数"
+            },
+            {
+                "列名": "TRANS_REV_OVER_VOL_TIMES",
+                "描述": "配变反向过电压次数"
+            },
+            {
+                "列名": "TRANS_REVERSE_POWER_TIMES",
+                "描述": "配变反送电次数"
+            },
+            {
+                "列名": "TRANS_REVERSE_POWER_NUM",
+                "描述": "配变反送电次台数"
+            },
+            {
+                "列名": "CREATE_TIME",
+                "描述": "创建时间;"
+            },
+            {
+                "列名": "UPDATE_TIME",
+                "描述": "更新时间;"
+            },
+            {
+                "列名": "PATH",
+                "描述": "单位全路径;"
+            },
+            {
+                "列名": "PATH_NAME",
+                "描述": "单位全路径名称;"
+            },
+            {
+                "列名": "TRANS_OVER_LOAD_DUR",
+                "描述": "配变过载总时长（小时）;"
+            },
+            {
+                "列名": "TRANS_HEAVY_LOAD_DUR",
+                "描述": "配变重载总时长（小时）;"
+            },
+            {
+                "列名": "TRANS_REVOVER_LOAD_DUR",
+                "描述": "配变反向过载总时长（小时）;"
+            },
+            {
+                "列名": "TRANS_REVHEAVY_LOAD_DUR",
+                "描述": "配变反向重载总时长（小时）;"
+            },
+            {
+                "列名": "TRANS_EMPTY_LOAD_DUR",
+                "描述": "配变空载总时长（小时）;"
+            },
+            {
+                "列名": "TRANS_LIGHT_LOAD_DUR",
+                "描述": "配变轻载总时长（小时）;"
+            },
+            {
+                "列名": "TRANS_OVER_VOL_DUR",
+                "描述": "配变过电压总时长（小时）;"
+            },
+            {
+                "列名": "TRANS_LOW_VOL_DUR",
+                "描述": "配变低电压总时长（小时）;"
+            },
+            {
+                "列名": "TRANS_REVOVER_VOL_DUR",
+                "描述": "配变反向过电压总时长（小时）;"
+            },
+            {
+                "列名": "TRANS_REVLOW_VOL_DUR",
+                "描述": "配变反向低电压总时长（小时）;"
+            },
+            {
+                "列名": "TRANS_UNBALANCED_DUR",
+                "描述": "配变三项不平衡总时长（小时）;"
+            },
+            {
+                "列名": "TRANS_REV_POWER_DUR",
+                "描述": "配变返送电总时长（小时）;"
+            }
+        ]
+    },
+    "ads_trans_abnormal_static": {
+        "类型": "mysql",
+        "表名": "ads_trans_abnormal_static",
+        "描述": "配变异常事件统计表-设备维度",
+        "属性": [
+            {
+                "列名": "ID",
+                "描述": "主键ID"
+            },
+            {
+                "列名": "SUBSTATION_ID",
+                "描述": "变电站ID"
+            },
+            {
+                "列名": "SUBSTATION_NAME",
+                "描述": "变电站名称"
+            },
+            {
+                "列名": "LINE_ID",
+                "描述": "线路ID"
+            },
+            {
+                "列名": "LINE_NAME",
+                "描述": "线路名称"
+            },
+            {
+                "列名": "TG_ID",
+                "描述": "台区ID"
+            },
+            {
+                "列名": "TG_NO",
+                "描述": "台区编号"
+            },
+            {
+                "列名": "TG_NAME",
+                "描述": "台区名称"
+            },
+            {
+                "列名": "CITY",
+                "描述": "所属地市"
+            },
+            {
+                "列名": "CITY_NAME",
+                "描述": "所属地市名称"
+            },
+            {
+                "列名": "district",
+                "描述": "所属区县、供电中心"
+            },
+            {
+                "列名": "district_name",
+                "描述": "所属区县、供电中心名称"
+            },
+            {
+                "列名": "STATION",
+                "描述": "所属供电所编码"
+            },
+            {
+                "列名": "STATION_NAME",
+                "描述": "所属供电所名称"
+            },
+            {
+                "列名": "DATA_TIME",
+                "描述": "数据时间"
+            },
+            {
+                "列名": "DATE_TYPE",
+                "描述": "时间类别1:年 2:月 3:天"
+            },
+            {
+                "列名": "YEAR",
+                "描述": "年"
+            },
+            {
+                "列名": "MONTH",
+                "描述": "月"
+            },
+            {
+                "列名": "DAY",
+                "描述": "日"
+            },
+            {
+                "列名": "PUB_PRIV_FLAG_NAME",
+                "描述": "公专变标识 (中文)"
+            },
+            {
+                "列名": "PUB_PRIV_FLAG",
+                "描述": "公专变标识 01.公变 02.专变"
+            },
+            {
+                "列名": "TRANS_ABNORMAL_TIMES",
+                "描述": "配变异常次数"
+            },
+            {
+                "列名": "TRANS_OVER_LOAD_TIMES",
+                "描述": "配变过载次数"
+            },
+            {
+                "列名": "TRANS_HEAVY_LOAD_TIMES",
+                "描述": "配变重载次数"
+            },
+            {
+                "列名": "TRANS_LIGHT_LOAD_TIMES",
+                "描述": "配变轻载次数"
+            },
+            {
+                "列名": "TRANS_EMPTY_LOAD_TIMES",
+                "描述": "配变空载次数"
+            },
+            {
+                "列名": "TRANS_LOW_VOL_TIMES",
+                "描述": "配变低电压次数"
+            },
+            {
+                "列名": "TRANS_OVER_VOL_TIMES",
+                "描述": "配变过电压次数"
+            },
+            {
+                "列名": "TRANS_UNBALANCED_TIMES",
+                "描述": "配变三相不平衡次数"
+            },
+            {
+                "列名": "TRANS_REV_OVER_LOAD_TIMES",
+                "描述": "配变反向过载次数"
+            },
+            {
+                "列名": "TRANS_REV_HEAVY_LOAD_TIMES",
+                "描述": "配变反向重载次数"
+            },
+            {
+                "列名": "TRANS_REV_LOW_VOL_TIMES",
+                "描述": "配变反向低电压次数"
+            },
+            {
+                "列名": "TRANS_REV_OVER_VOL_TIMES",
+                "描述": "配变反向过电压次数"
+            },
+            {
+                "列名": "TRANS_REVERSE_POWER_TIMES",
+                "描述": "配变反送电次数"
+            },
+            {
+                "列名": "CREATE_TIME",
+                "描述": "创建时间;"
+            },
+            {
+                "列名": "UPDATE_TIME",
+                "描述": "更新时间;"
+            },
+            {
+                "列名": "PATH",
+                "描述": "单位全路径;"
+            },
+            {
+                "列名": "PATH_NAME",
+                "描述": "单位全路径名称;"
+            }
+        ]
+    },
+    "ads_tranformer_outage_event": {
+        "类型": "postgresql",
+        "表名": "ads_tranformer_outage_event",
+        "描述": "配变停运事件",
+        "属性": [
+            {
+                "列名": "id",
+                "描述": "主键ID"
+            },
+            {
+                "列名": "tg_id",
+                "描述": "台区ID"
+            },
+            {
+                "列名": "tg_no",
+                "描述": "台区编号"
+            },
+            {
+                "列名": "tg_name",
+                "描述": "台区名称"
+            },
+            {
+                "列名": "substation_id",
+                "描述": "变电站ID"
+            },
+            {
+                "列名": "substation_name",
+                "描述": "变电站名称"
+            },
+            {
+                "列名": "line_id",
+                "描述": "线路ID"
+            },
+            {
+                "列名": "line_name",
+                "描述": "线路名称"
+            },
+            {
+                "列名": "branch_line_id",
+                "描述": "支线ID"
+            },
+            {
+                "列名": "branch_line_name",
+                "描述": "支线名称"
+            },
+            {
+                "列名": "city",
+                "描述": "所属地市"
+            },
+            {
+                "列名": "city_name",
+                "描述": "所属地市名称"
+            },
+            {
+                "列名": "district",
+                "描述": "所属区县、供电中心"
+            },
+            {
+                "列名": "district_name",
+                "描述": "所属区县、供电中心名称"
+            },
+            {
+                "列名": "station",
+                "描述": "所属供电所编码"
+            },
+            {
+                "列名": "station_name",
+                "描述": "所属供电所名称"
+            },
+            {
+                "列名": "team",
+                "描述": "班组"
+            },
+            {
+                "列名": "team_name",
+                "描述": "班组名称"
+            },
+            {
+                "列名": "pub_priv_flag",
+                "描述": "公专变标识 01.公变 02.专变"
+            },
+            {
+                "列名": "pub_priv_flag_name",
+                "描述": "公专变标识 (中文)"
+            },
+            {
+                "列名": "equipment_owner_id",
+                "描述": "设备主人ID"
+            },
+            {
+                "列名": "equipment_owner_tel",
+                "描述": "设备主人电话"
+            },
+            {
+                "列名": "equipment_owner_name",
+                "描述": "设备主人名称"
+            },
+            {
+                "列名": "outage_event_type",
+                "描述": "停运事件大类：1:故障，2:计划"
+            },
+            {
+                "列名": "outage_event_type_name",
+                "描述": "停运事件大类名称"
+            },
+            {
+                "列名": "outage_reason",
+                "描述": "停电原因"
+            },
+            {
+                "列名": "event_time",
+                "描述": "事件发生时间"
+            },
+            {
+                "列名": "power_on_time",
+                "描述": "上电时间"
+            },
+            {
+                "列名": "event_duration",
+                "描述": "事件发生时长（小时）"
+            },
+            {
+                "列名": "operation_nature",
+                "描述": "运维性质：1--地市公司运维；2-县公司运维；3--用户运维"
+            },
+            {
+                "列名": "operation_nature_name",
+                "描述": "运维性质名称"
+            },
+            {
+                "列名": "cons_num",
+                "描述": "当前管辖用户数"
+            },
+            {
+                "列名": "imp_cons_num",
+                "描述": "当前管辖重要用户数"
+            },
+            {
+                "列名": "sen_cons_num",
+                "描述": "当前管辖敏感用户数"
+            },
+            {
+                "列名": "livelihood_cons_count",
+                "描述": "当前管辖民生用户数"
+            },
+            {
+                "列名": "zero_household_transfer",
+                "描述": "当前管辖零用电用户数"
+            },
+            {
+                "列名": "gpc_cons_num",
+                "描述": "当前管辖光伏用户数"
+            },
+            {
+                "列名": "mid_vol_hours_num",
+                "描述": "中压时户数"
+            },
+            {
+                "列名": "low_vol_hours_num",
+                "描述": "低压时户数"
+            },
+            {
+                "列名": "fault_order_num",
+                "描述": "故障报修工单总数量（不含子单）"
+            },
+            {
+                "列名": "proactive_repair_order_num",
+                "描述": "主动抢修工单总数量"
+            },
+            {
+                "列名": "complain_order_num",
+                "描述": "投诉工单总数量"
+            },
+            {
+                "列名": "outage_info_num",
+                "描述": "停电信息数"
+            },
+            {
+                "列名": "opinion_order_num",
+                "描述": "意见工单数"
+            },
+            {
+                "列名": "ewsd_cons_count",
+                "描述": "当前管辖老弱病残用户数"
+            },
+            {
+                "列名": "coaltoelec_cons_count",
+                "描述": "当前管辖煤改电用户数"
+            },
+            {
+                "列名": "irri_cons_count",
+                "描述": "当前管辖农灌用户数"
+            },
+            {
+                "列名": "elecheat_cons_count",
+                "描述": "当前管辖电采暖用户数"
+            }
+        ]
+    },
+    "ads_tranformer_outage_org_static": {
+        "类型": "postgresql",
+        "表名": "ads_tranformer_outage_org_static",
+        "描述": "配变停运事件统计表-单位维度",
+        "属性": [
+            {
+                "列名": "id",
+                "描述": "主键ID"
+            },
+            {
+                "列名": "city",
+                "描述": "所属地市"
+            },
+            {
+                "列名": "city_name",
+                "描述": "所属地市名称"
+            },
+            {
+                "列名": "district",
+                "描述": "所属区县、供电中心"
+            },
+            {
+                "列名": "district_name",
+                "描述": "所属区县、供电中心名称"
+            },
+            {
+                "列名": "station",
+                "描述": "所属供电所编码"
+            },
+            {
+                "列名": "station_name",
+                "描述": "所属供电所名称"
+            },
+            {
+                "列名": "data_time",
+                "描述": "数据时间"
+            },
+            {
+                "列名": "date_type",
+                "描述": "时间类别1:年 2:月 3:天"
+            },
+            {
+                "列名": "year",
+                "描述": "年"
+            },
+            {
+                "列名": "month",
+                "描述": "月"
+            },
+            {
+                "列名": "day",
+                "描述": "日"
+            },
+            {
+                "列名": "pub_priv_flag",
+                "描述": "公专变标识 01.公变 02.专变"
+            },
+            {
+                "列名": "pub_priv_flag_name",
+                "描述": "公专变标识 (中文)"
+            },
+            {
+                "列名": "outage_trans_num",
+                "描述": "停运配变数"
+            },
+            {
+                "列名": "outage_trans_times",
+                "描述": "配变停运次数"
+            },
+            {
+                "列名": "fault_outage_num",
+                "描述": "故障停运数"
+            },
+            {
+                "列名": "fault_outage_times",
+                "描述": "故障停运次数"
+            },
+            {
+                "列名": "fault_outage_rate",
+                "描述": "故障停运率"
+            },
+            {
+                "列名": "plan_outage_num",
+                "描述": "计划停运数"
+            },
+            {
+                "列名": "plan_outage_times",
+                "描述": "计划停运次数"
+            },
+            {
+                "列名": "plan_outage_rate",
+                "描述": "计划停运率"
+            },
+            {
+                "列名": "poweron_outage_num",
+                "描述": "已复电停运数"
+            },
+            {
+                "列名": "poweroff_outage_num",
+                "描述": "未复电停运数"
+            },
+            {
+                "列名": "fault_on_outage_num",
+                "描述": "故障已复电停运数"
+            },
+            {
+                "列名": "fault_off_outage_num",
+                "描述": "故障未复电停运数"
+            },
+            {
+                "列名": "plan_on_outage_num",
+                "描述": "计划已复电停运数"
+            },
+            {
+                "列名": "plan_off_outage_num",
+                "描述": "计划未复电停运数"
+            },
+            {
+                "列名": "fault_outage_cons_num",
+                "描述": "故障停运影响用户数"
+            },
+            {
+                "列名": "plan_outage_cons_num",
+                "描述": "计划停运影响用户数"
+            },
+            {
+                "列名": "plan_outage_sen_cons_num",
+                "描述": "计划停运影响敏感用户数"
+            },
+            {
+                "列名": "plan_outage_imp_cons_num",
+                "描述": "计划停运影响重要用户数"
+            },
+            {
+                "列名": "plan_outage_live_cons_num",
+                "描述": "计划停运影响民生用户数"
+            },
+            {
+                "列名": "plan_outage_zero_cons_num",
+                "描述": "计划停运影响零用电用户数"
+            },
+            {
+                "列名": "plan_outage_gpc_cons_num",
+                "描述": "计划停运影响光伏用户数"
+            },
+            {
+                "列名": "fault_outage_sen_cons_num",
+                "描述": "故障停运影响敏感用户数"
+            },
+            {
+                "列名": "fault_outage_imp_cons_num",
+                "描述": "故障停运影响重要用户数"
+            },
+            {
+                "列名": "fault_outage_live_cons_num",
+                "描述": "故障停运影响民生用户数"
+            },
+            {
+                "列名": "fault_outage_zero_cons_num",
+                "描述": "故障停运影响零用电用户数"
+            },
+            {
+                "列名": "fault_outage_gpc_cons_num",
+                "描述": "故障停运影响光伏用户数"
+            },
+            {
+                "列名": "invl_outage_gpc_cons_times",
+                "描述": "涉及光伏用户停运次数"
+            },
+            {
+                "列名": "invl_outage_zero_cons_times",
+                "描述": "涉及零用电用户停运次数"
+            },
+            {
+                "列名": "invl_outage_live_cons_times",
+                "描述": "涉及民生用户停运次数"
+            },
+            {
+                "列名": "invl_outage_imp_cons_times",
+                "描述": "涉及重要用户停运次数"
+            },
+            {
+                "列名": "invl_outage_sen_cons_times",
+                "描述": "涉及敏感用户停运次数"
+            },
+            {
+                "列名": "fault_outage_ewsd_cons_num",
+                "描述": "故障停运影响老弱病残用户数"
+            },
+            {
+                "列名": "fault_outage_coaltoelec_cons_num",
+                "描述": "故障停运影响煤改电用户数"
+            },
+            {
+                "列名": "fault_outage_irri_cons_num",
+                "描述": "故障停运影响农灌用户数"
+            },
+            {
+                "列名": "fault_outage_elecheat_cons_num",
+                "描述": "故障停运影响电采暖用户数"
+            },
+            {
+                "列名": "plan_ewsd_cons_num",
+                "描述": "计划停运影响老弱病残用户数"
+            },
+            {
+                "列名": "plan_coaltoelec_cons_num",
+                "描述": "计划停运影响煤改电用户数"
+            },
+            {
+                "列名": "plan_irri_cons_num",
+                "描述": "计划停运影响农灌用户数"
+            },
+            {
+                "列名": "plan_elecheat_cons_num",
+                "描述": "计划停运影响电采暖用户数"
+            },
+            {
+                "列名": "invl_outage_ewsd_cons_num",
+                "描述": "涉及老弱病残用户次数"
+            },
+            {
+                "列名": "invl_outage_coaltoelec_cons_num",
+                "描述": "涉及煤改电用户次数"
+            },
+            {
+                "列名": "invl_outage_irri_cons_num",
+                "描述": "涉及农灌用户次数"
+            },
+            {
+                "列名": "invl_outage_elecheat_cons_num",
+                "描述": "涉及电采暖用户次数"
+            },
+            {
+                "列名": "mid_vol_hours_num",
+                "描述": "中压时户数"
+            },
+            {
+                "列名": "low_vol_hours_num",
+                "描述": "低压时户数"
+            }
+        ]
+    },
+    "ads_tranformer_outage_static": {
+        "类型": "postgresql",
+        "表名": "ads_tranformer_outage_static",
+        "描述": "配变停运事件统计表-设备维度",
+        "属性": [
+            {
+                "列名": "id",
+                "描述": "主键ID"
+            },
+            {
+                "列名": "substation_id",
+                "描述": "变电站ID"
+            },
+            {
+                "列名": "substation_name",
+                "描述": "变电站名称"
+            },
+            {
+                "列名": "line_id",
+                "描述": "线路ID"
+            },
+            {
+                "列名": "line_name",
+                "描述": "线路名称"
+            },
+            {
+                "列名": "branch_line_id",
+                "描述": "支线ID"
+            },
+            {
+                "列名": "branch_line_name",
+                "描述": "支线名称"
+            },
+            {
+                "列名": "tg_id",
+                "描述": "台区ID"
+            },
+            {
+                "列名": "tg_no",
+                "描述": "台区编号"
+            },
+            {
+                "列名": "tg_name",
+                "描述": "台区名称"
+            },
+            {
+                "列名": "city",
+                "描述": "所属地市"
+            },
+            {
+                "列名": "city_name",
+                "描述": "所属地市名称"
+            },
+            {
+                "列名": "district",
+                "描述": "所属区县、供电中心"
+            },
+            {
+                "列名": "district_name",
+                "描述": "所属区县、供电中心名称"
+            },
+            {
+                "列名": "station",
+                "描述": "所属供电所编码"
+            },
+            {
+                "列名": "station_name",
+                "描述": "所属供电所名称"
+            },
+            {
+                "列名": "data_time",
+                "描述": "数据时间"
+            },
+            {
+                "列名": "date_type",
+                "描述": "时间类别1:年 2:月 3:天"
+            },
+            {
+                "列名": "year",
+                "描述": "年"
+            },
+            {
+                "列名": "month",
+                "描述": "月"
+            },
+            {
+                "列名": "day",
+                "描述": "日"
+            },
+            {
+                "列名": "pub_priv_flag",
+                "描述": "公专变标识 01.公变 02.专变"
+            },
+            {
+                "列名": "pub_priv_flag_name",
+                "描述": "公专变标识 (中文)"
+            },
+            {
+                "列名": "outage_trans_num",
+                "描述": "停运配变数"
+            },
+            {
+                "列名": "outage_trans_times",
+                "描述": "配变停运次数"
+            },
+            {
+                "列名": "fault_outage_num",
+                "描述": "故障停运数"
+            },
+            {
+                "列名": "fault_outage_times",
+                "描述": "故障停运次数"
+            },
+            {
+                "列名": "fault_outage_rate",
+                "描述": "故障停运率"
+            },
+            {
+                "列名": "plan_outage_num",
+                "描述": "计划停运数"
+            },
+            {
+                "列名": "plan_outage_times",
+                "描述": "计划停运次数"
+            },
+            {
+                "列名": "plan_outage_rate",
+                "描述": "计划停运率"
+            },
+            {
+                "列名": "fault_outage_cons_num",
+                "描述": "故障停运影响用户数"
+            },
+            {
+                "列名": "plan_outage_cons_num",
+                "描述": "计划停运影响用户数"
+            },
+            {
+                "列名": "plan_outage_sen_cons_num",
+                "描述": "计划停运影响敏感用户数"
+            },
+            {
+                "列名": "plan_outage_imp_cons_num",
+                "描述": "计划停运影响重要用户数"
+            },
+            {
+                "列名": "plan_outage_live_cons_num",
+                "描述": "计划停运影响民生用户数"
+            },
+            {
+                "列名": "plan_outage_zero_cons_num",
+                "描述": "计划停运影响零用电用户数"
+            },
+            {
+                "列名": "plan_outage_gpc_cons_num",
+                "描述": "计划停运影响光伏用户数"
+            },
+            {
+                "列名": "fault_outage_sen_cons_num",
+                "描述": "故障停运影响敏感用户数"
+            },
+            {
+                "列名": "fault_outage_imp_cons_num",
+                "描述": "故障停运影响重要用户数"
+            },
+            {
+                "列名": "fault_outage_live_cons_num",
+                "描述": "故障停运影响民生用户数"
+            },
+            {
+                "列名": "fault_outage_zero_cons_num",
+                "描述": "故障停运影响零用电用户数"
+            },
+            {
+                "列名": "fault_outage_gpc_cons_num",
+                "描述": "故障停运影响光伏用户数"
+            },
+            {
+                "列名": "fault_outage_ewsd_cons_num",
+                "描述": "故障停运影响老弱病残用户数"
+            },
+            {
+                "列名": "fault_outage_coaltoelec_cons_num",
+                "描述": "故障停运影响煤改电用户数"
+            },
+            {
+                "列名": "fault_outage_irri_cons_num",
+                "描述": "故障停运影响农灌用户数"
+            },
+            {
+                "列名": "fault_outage_elecheat_cons_num",
+                "描述": "故障停运影响电采暖用户数"
+            },
+            {
+                "列名": "plan_ewsd_cons_num",
+                "描述": "计划停运影响老弱病残用户数"
+            },
+            {
+                "列名": "plan_coaltoelec_cons_num",
+                "描述": "计划停运影响煤改电用户数"
+            },
+            {
+                "列名": "plan_irri_cons_num",
+                "描述": "计划停运影响农灌用户数"
+            },
+            {
+                "列名": "plan_elecheat_cons_num",
+                "描述": "计划停运影响电采暖用户数"
+            },
+            {
+                "列名": "mid_vol_hours_num",
+                "描述": "中压时户数"
+            },
+            {
+                "列名": "low_vol_hours_num",
+                "描述": "低压时户数"
+            }
+        ]
+    }
+}
+]

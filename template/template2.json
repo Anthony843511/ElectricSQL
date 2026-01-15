@@ -1,0 +1,622 @@
+[
+  {
+    "template_type":"static_template",
+    "template_name":"按时间、单位、设备等维度进行统计的表或视图的训练模版",
+    "template_table_example":"某单位某年某月或某日的各汇总统计数据",
+    "template_table":[
+         {"table_enname":"v_line_outage_org_static_province","table_cnname": "线路停运情况按年月日全省汇总表","table_simplename":"线路停电事件","istuning":"1"},
+         {"table_enname":"v_line_outage_org_static_city","table_cnname": "线路停运情况按年月日及地市公司汇总表","table_simplename":"线路停电事件","istuning":"1"},
+         {"table_enname":"v_line_outage_org_static_district","table_cnname": "线路停运情况按年月日及县公司汇总表","table_simplename":"线路停电事件","istuning":"1"},
+         {"table_enname":"v_line_outage_org_static_station","table_cnname": "线路停运情况按年月日及班组供电所汇总表","table_simplename":"线路停电事件","istuning":"1"}
+    ],
+    "template_data": [
+      {
+        "publicvariable":[
+           {"variable_name":"date_year","variable_cname":"历史整年","variable_value": " DATA_TIME ='INPUT_DATE'  and DATE_TYPE=1 ","variable_input":"INPUT_DATE","variable_input_example":"2024"},
+           {"variable_name":"date_month","variable_cname":"历史整月","variable_value": " DATA_TIME ='INPUT_DATE'  and DATE_TYPE=2 ","variable_input":"INPUT_DATE","variable_input_example":"2024-12"},
+           {"variable_name":"date_day","variable_cname":"历史整日","variable_value": " DATA_TIME ='INPUT_DATE'  and DATE_TYPE=3 ","variable_input":"INPUT_DATE","variable_input_example":"2024-12-01"},
+           {"variable_name":"date_yearmonth","variable_cname":"月度排序或月趋势","variable_value": " DATA_TIME like 'INPUT_DATE%'  and DATE_TYPE=2 ","variable_input":"INPUT_DATE","variable_input_example":"2024"},
+           {"variable_name":"date_monthday","variable_cname":"日期排序或日趋势","variable_value": " DATA_TIME like 'INPUT_DATE%'  and DATE_TYPE=3 ","variable_input":"INPUT_DATE","variable_input_example":"2024-12"}
+        ],
+        "tablevariable":[
+             {
+               "table_enname":"v_line_outage_org_static_province",
+               "variable":
+               [
+                  {"variable_name":"place","variable_cname":"地点或单位","variable_cnvalue": " ORGAN_NAME='江西' ","variable_envalue":" ORGAN_CODE='36101' ","variable_input":"","variable_input_example":""},
+                  {"variable_name":"sumkey","variable_cname":"汇总主键","variable_cnvalue": " ORGAN_NAME='江西' ","variable_envalue":" ORGAN_CODE='36101' ","variable_input":"","variable_input_example":""},
+                  {"variable_name":"labelsumkey","variable_cname":"标签主键","variable_cnvalue": " INPUT_LABEL_NAME ","variable_envalue":"  ","variable_input":"INPUT_LABEL_NAME","variable_input_example":""},
+                  {"variable_name":"default_ordercolumn","variable_cname":"默认排序字段","variable_cnvalue": " ORGAN_CODE ","variable_envalue":"  ","variable_input":"","variable_input_example":""},
+                  {"variable_name":"default_order","variable_cname":"默认排序顺序","variable_cnvalue": " asc ","variable_envalue":"  ","variable_input":"","variable_input_example":""},
+                  {"variable_name":"default_column","variable_cname":"默认列","variable_cnvalue": " ORGAN_CODE,ORGAN_NAME ","variable_envalue":"  ","variable_input":"","variable_input_example":""},
+                  {"variable_name":"condition","variable_cname":"除时间地点外的其他条件（字符型字段）","variable_cnvalue": "  ","variable_envalue":"  ","variable_input":"","variable_input_example":"本表无其他条件"}
+               ]
+             },
+             {
+               "table_enname":"v_line_outage_org_static_city",
+               "variable":
+               [
+                  {"variable_name":"place","variable_cname":"地点或单位","variable_cnvalue": " ORGAN_NAME like 'INPUT_ORGAN_NAME%' ","variable_envalue":" ORGAN_CODE='INPUT_ORGAN_CODE' ","variable_input":"INPUT_ORGAN_NAME","variable_input_example":"南昌供电分公司"},
+                  {"variable_name":"sumkey","variable_cname":"汇总主键","variable_cnvalue": " ORGAN_NAME like 'INPUT_ORGAN_NAME%' ","variable_envalue":" ORGAN_CODE='INPUT_ORGAN_CODE' ","variable_input":"INPUT_ORGAN_NAME","variable_input_example":"南昌供电分公司"},
+                  {"variable_name":"labelsumkey","variable_cname":"标签主键","variable_cnvalue": " INPUT_CITY_LABEL ","variable_envalue":"  ","variable_input":"INPUT_CITY_LABEL","variable_input_example":""},
+                  {"variable_name":"default_ordercolumn","variable_cname":"默认排序字段","variable_cnvalue": " ORGAN_CODE ","variable_envalue":"  ","variable_input":"","variable_input_example":""},
+                  {"variable_name":"default_order","variable_cname":"默认排序顺序","variable_cnvalue": " asc ","variable_envalue":"  ","variable_input":"","variable_input_example":""},
+                  {"variable_name":"default_column","variable_cname":"默认列","variable_cnvalue": " ORGAN_CODE,ORGAN_NAME ","variable_envalue":"  ","variable_input":"","variable_input_example":""},
+                  {"variable_name":"condition","variable_cname":"除时间地点外的其他条件（字符型字段）","variable_cnvalue": "  ","variable_envalue":"  ","variable_input":"","variable_input_example":"本表无其他条件"}          
+               ]
+             },  
+              {
+               "table_enname":"v_line_outage_org_static_district",
+               "variable":
+               [
+                  {"variable_name":"place","variable_cname":"地点或单位","variable_cnvalue": " ORGAN_NAME like '%INPUT_ORGAN_NAME%' ","variable_envalue":" ORGAN_CODE='INPUT_ORGAN_CODE' ","variable_input":"INPUT_ORGAN_NAME","variable_input_example":"贵溪县"},
+                  {"variable_name":"sumkey","variable_cname":"汇总主键","variable_cnvalue": " ORGAN_NAME like 'INPUT_ORGAN_NAME%'","variable_envalue":" ORGAN_CODE='INPUT_ORGAN_CODE' ","variable_input":"INPUT_ORGAN_NAME","variable_input_example":"贵溪县"},
+                  {"variable_name":"labelsumkey","variable_cname":"标签主键","variable_cnvalue": " INPUT_DISTINCT_LABEL ","variable_envalue":"  ","variable_input":"INPUT_DISTINCT_NAME","variable_input_example":""},
+                  {"variable_name":"default_ordercolumn","variable_cname":"默认排序字段","variable_cnvalue": " ORGAN_CODE ","variable_envalue":"  ","variable_input":"","variable_input_example":""},
+                  {"variable_name":"default_order","variable_cname":"默认排序顺序","variable_cnvalue": " asc ","variable_envalue":"  ","variable_input":"","variable_input_example":""},
+                  {"variable_name":"default_column","variable_cname":"默认列","variable_cnvalue": " P_ORGAN_NAME,ORGAN_CODE,ORGAN_NAME ","variable_envalue":"  ","variable_input":"","variable_input_example":""},
+                  {"variable_name":"condition","variable_cname":"除时间地点外的其他条件（字符型字段）","variable_cnvalue": "P_ORGAN_NAME","variable_envalue":"  ","variable_input":"","variable_input_example":" 南昌所辖县公司 "}                          
+               ]
+             },
+               {
+               "table_enname":"v_line_outage_org_static_station",
+               "variable":
+               [
+                  {"variable_name":"place","variable_cname":"地点或单位","variable_cnvalue": " ORGAN_NAME like '%INPUT_ORGAN_NAME%' ","variable_envalue":" ORGAN_CODE='INPUT_ORGAN_CODE' ","variable_input":"INPUT_ORGAN_NAME","variable_input_example":"贵溪县"},
+                  {"variable_name":"sumkey","variable_cname":"汇总主键","variable_cnvalue": " STATION_NAME like '%INPUT_STATION_NAME%' ","variable_envalue":" STATION='INPUT_STATION' ","variable_input":" INPUT_STATION","variable_input_example":"四青供电所"},
+                  {"variable_name":"labelsumkey","variable_cname":"标签主键","variable_cnvalue": " INPUT_STATION_LABEL ","variable_envalue":"  ","variable_input":"INPUT_STATION_LABEL","variable_input_example":""},
+                  {"variable_name":"default_ordercolumn","variable_cname":"默认排序字段","variable_cnvalue": " ORGAN_CODE,STATION_NAME ","variable_envalue":"  ","variable_input":"","variable_input_example":""},
+                  {"variable_name":"default_order","variable_cname":"默认排序顺序","variable_cnvalue": " asc ","variable_envalue":"  ","variable_input":"","variable_input_example":""},
+                  {"variable_name":"default_column","variable_cname":"默认列","variable_cnvalue": " P_ORGAN_NAME,ORGAN_CODE,ORGAN_NAME,STATION,STATION_NAME ","variable_envalue":"  ","variable_input":"","variable_input_example":""},
+                  {"variable_name":"condition","variable_cname":"除时间地点外的其他条件（字符型字段）","variable_cnvalue": "P_ORGAN_NAME,STATION_NAME","variable_envalue":"  ","variable_input":"","variable_input_example":" 南昌所辖县公司 "}                     
+               ]
+             },  
+              {
+               "table_enname":"v_line_outage_static_line",
+               "variable":
+               [
+                  {"variable_name":"place","variable_cname":"地点或单位","variable_cnvalue": " ORGAN_NAME like '%INPUT_ORGAN_NAME%' ","variable_envalue":" ORGAN_CODE='INPUT_ORGAN_NAME' ","variable_input":"INPUT_ORGAN_NAME","variable_input_example":"贵溪县"},
+                  {"variable_name":"sumkey","variable_cname":"汇总主键","variable_cnvalue": " LINE_NAME like '%INPUT_LINE_NAME%' ","variable_envalue":" LINE_ID='INPUT_LINE_ID' ","variable_input":"INPUT_LINE_ID","variable_input_example":"清水线"},
+                  {"variable_name":"labelsumkey","variable_cname":"标签主键","variable_cnvalue": " INPUT_LINE_LABEL ","variable_envalue":"  ","variable_input":"INPUT_LINE_LABEL","variable_input_example":""},
+                  {"variable_name":"default_ordercolumn","variable_cname":"默认排序字段","variable_cnvalue": " ORGAN_CODE,LINE_NAME  ","variable_envalue":"  ","variable_input":"","variable_input_example":""},
+                  {"variable_name":"default_order","variable_cname":"默认排序顺序","variable_cnvalue": " asc ","variable_envalue":"  ","variable_input":"","variable_input_example":""},
+                  {"variable_name":"default_column","variable_cname":"默认列","variable_cnvalue": " ORGAN_CODE,ORGAN_NAME,LINE_ID,LINE_NAME ","variable_envalue":"  ","variable_input":"","variable_input_example":""},
+                  {"variable_name":"condition","variable_cname":"除时间地点外的其他条件（字符型字段）","variable_cnvalue": "SUBSTATION_NAME,LINE_NAME,STATION_NAME ","variable_envalue":"  ","variable_input":"","variable_input_example":" 南昌所辖县公司 "}                      
+               ]
+             }                                             
+        ],
+        "funingtemplates":[
+             {
+               "question_type":"普通查询+历史整年+地点",
+               "question_template1": "{$date_year}{$place}{$table_simplename}的{$column_name}",
+               "question_example1": "2024年南昌线路停电事件的停电次数",
+               "question_template2": "{$date_year}{$place}{$column_name}",
+               "question_example2": "2024年南昌线路停电事件次数",
+               "question_sql":"select {$column} FROM {$table_enname} WHERE {$date_year} AND {$place} order by {$default_ordercolumn} {$default_order} "        
+             },
+             {
+               "question_type":"普通查询+历史整年+地点+汇总主键",
+               "question_template1": "{$date_year}{$place}{$sumkey}{$table_simplename}的{$column_name}",
+               "question_example1": "2024年月湖四青供电所线路停电事件的停电次数",
+               "question_template2": "{$date_year}{$place}{$sumkey}{$column_name}",
+               "question_example2": "2024年月湖四青供电所线路停电次数",
+               "question_sql":"select {$column} FROM {$table_enname} WHERE {$date_year} AND {$place} and {$sumkey} order by {$default_ordercolumn} {$default_order} "        
+             },  
+            {
+               "question_type":"普通查询+历史整年+地点+标签主键",
+               "question_template1": "{$date_year}{$place}{$labelsumkey}{$table_simplename}的{$column_name}",
+               "question_example1": "2024年月湖五星级供电所停电事件的停电次数",
+               "question_template2": "{$date_year}{$place}{$labelsumkey}{$column_name}",
+               "question_example2": "2024年月湖五星级供电所线路停电事件次数",
+               "question_sql":"select {$column} FROM {$table_enname} WHERE {$date_year} AND {$place} and {$labelsumkey} order by {$default_ordercolumn} {$default_order} "        
+             },      
+             {
+               "question_type":"普通查询+历史整年+地点+其他条件",
+               "question_template1": "{$date_year}{$place} {$condition} {$table_simplename}的{$column_name}",
+               "question_example1": "2024年月湖配电运维三班运维的线路停电事件的停电次数",
+               "question_template2": "{$date_year}{$place} {$condition} {$column_name}",
+               "question_example2": "2024年月湖配电运维三班运维线路停电事件次数",
+               "question_sql":"select {$column} FROM {$table_enname} WHERE {$date_year} AND {$place} and {$condition}  order by {$default_ordercolumn} {$default_order} "        
+             },    
+            {
+               "question_type":"普通查询+历史整年+地点+标签主键+其他条件",
+               "question_template1": "{$date_year}{$place}{$labelsumkey}{$condition} {$table_simplename}的{$column_name}",
+               "question_example1": "2024年月湖五星级配电运维三班运维的线路停电事件的停电次数",
+               "question_template2": "{$date_year}{$place}{$labelsumkey}{$condition} {$column_name}",
+               "question_example2": "2024年月湖五星级配电运维三班运维线路停电事件次数",
+               "question_sql":"select {$column} FROM {$table_enname} WHERE {$date_year} AND {$place} and {$labelsumkey} {$condition}  order by {$default_ordercolumn} {$default_order} "        
+             },    
+           {
+               "question_type":"普通查询+历史整月+地点",
+               "question_template1": "{$date_month}{$place}{$table_simplename}的{$column_name}",
+               "question_example1": "2024年12月南昌线路停电事件的停电次数",
+               "question_template2": "{$date_month}{$place}{$column_name}",
+               "question_example2": "2024年12月南昌线路停电事件次数",
+               "question_sql":"select {$column} FROM {$table_enname} WHERE {$date_month} AND {$place} order by {$default_ordercolumn} {$default_order} "        
+             },
+             {
+               "question_type":"普通查询+历史整月+地点+汇总主键",
+               "question_template1": "{$date_month}{$place}{$sumkey}{$table_simplename}的{$column_name}",
+               "question_example1": "2024年12月月湖四青供电所线路停电事件的停电次数",
+               "question_template2": "{$date_month}{$place}{$sumkey}{$column_name}",
+               "question_example2": "2024年12月月湖四青供电所线路停电次数",
+               "question_sql":"select {$column} FROM {$table_enname} WHERE {$date_month} AND {$place} and {$sumkey} order by {$default_ordercolumn} {$default_order} "        
+             },  
+            {
+               "question_type":"普通查询+历史整月+地点+标签主键",
+               "question_template1": "{$date_month}{$place}{$labelsumkey}{$table_simplename}的{$column_name}",
+               "question_example1": "2024年12月月湖五星级供电所线路停电事件的停电次数",
+               "question_template2": "{$date_month}{$place}{$labelsumkey}{$column_name}",
+               "question_example2": "2024年12月月湖五星级供电所线路停电事件次数",
+               "question_sql":"select {$column} FROM {$table_enname} WHERE {$date_month} AND {$place} and {$labelsumkey} order by {$default_ordercolumn} {$default_order} "        
+             },      
+             {
+               "question_type":"普通查询+历史整月+地点+其他条件",
+               "question_template1": "{$date_month}{$place} {$condition} {$table_simplename}的{$column_name}",
+               "question_example1": "2024年12月月湖配电运维三班运维的线路停电事件的停电次数",
+               "question_template2": "{$date_month}{$place} {$condition} {$column_name}",
+               "question_example2": "2024年12月月湖配电运维三班运维线路停电事件次数",
+               "question_sql":"select {$column} FROM {$table_enname} WHERE {$date_month} AND {$place} and {$condition}  order by {$default_ordercolumn} {$default_order} "        
+             },    
+            {
+               "question_type":"普通查询+历史整月+地点+标签主键+其他条件",
+               "question_template1": "{$date_month}{$place}{$labelsumkey}{$condition} {$table_simplename}的{$column_name}",
+               "question_example1": "2024年12月月湖五星级配电运维三班运维的线路停电事件的停电次数",
+               "question_template2": "{$date_month}{$place}{$labelsumkey}{$condition} {$column_name}",
+               "question_example2": "2024年12月月湖五星级配电运维三班运维线路停电事件次数",
+               "question_sql":"select {$column} FROM {$table_enname} WHERE {$date_month} AND {$place} and {$labelsumkey} {$condition}  order by {$default_ordercolumn} {$default_order} "        
+             },    
+           {
+               "question_type":"普通查询+历史整日+地点",
+               "question_template1": "{$date_day}{$place}{$table_simplename}的{$column_name}",
+               "question_example1": "2024年12月01日南昌线路停电事件的停电次数",
+               "question_template2": "{$date_day}{$place}{$column_name}",
+               "question_example2": "2024年12月南昌线路停电事件次数",
+               "question_sql":"select {$column} FROM {$table_enname} WHERE {$date_day} AND {$place} order by {$default_ordercolumn} {$default_order} "        
+             },
+             {
+               "question_type":"普通查询+历史整日+地点+汇总主键",
+               "question_template1": "{$date_day}{$place}{$sumkey}{$table_simplename}的{$column_name}",
+               "question_example1": "2024年12月01日月湖四青供电所线路停电事件的停电次数",
+               "question_template2": "{$date_day}{$place}{$sumkey}{$column_name}",
+               "question_example2": "2024年12月01日月湖四青供电所线路停电次数",
+               "question_sql":"select {$column} FROM {$table_enname} WHERE {$date_day} AND {$place} and {$sumkey} order by {$default_ordercolumn} {$default_order} "        
+             },  
+            {
+               "question_type":"普通查询+历史整日+地点+标签主键",
+               "question_template1": "{$date_day}{$place}{$labelsumkey}{$table_simplename}的{$column_name}",
+               "question_example1": "2024年12月01日月湖五星级供电所线路停电事件的停电次数",
+               "question_template2": "{$date_day}{$place}{$labelsumkey}{$column_name}",
+               "question_example2": "2024年12月01日月湖五星级供电所线路停电事件次数",
+               "question_sql":"select {$column} FROM {$table_enname} WHERE {$date_day} AND {$place} and {$labelsumkey} order by {$default_ordercolumn} {$default_order} "        
+             },      
+             {
+               "question_type":"普通查询+历史整日+地点+其他条件",
+               "question_template1": "{$date_day}{$place} {$condition} {$table_simplename}的{$column_name}",
+               "question_example1": "2024年12月01日月湖配电运维三班运维的线路停电事件的停电次数",
+               "question_template2": "{$date_day}{$place} {$condition} {$column_name}",
+               "question_example2": "2024年12月01日月湖配电运维三班运维线路停电事件次数",
+               "question_sql":"select {$column} FROM {$table_enname} WHERE {$date_day} AND {$place} and {$condition}  order by {$default_ordercolumn} {$default_order} "        
+             },    
+            {
+               "question_type":"普通查询+历史整日+地点+标签主键+其他条件",
+               "question_template1": "{$date_day}{$place}{$labelsumkey}{$condition} {$table_simplename}的{$column_name}",
+               "question_example1": "2024年12月01日月湖五星级配电运维三班运维的线路停电事件的停电次数",
+               "question_template2": "{$date_day}{$place}{$labelsumkey}{$condition} {$column_name}",
+               "question_example2": "2024年12月01日月湖五星级配电运维三班运维线路停电事件次数",
+               "question_sql":"select {$column} FROM {$table_enname} WHERE {$date_day} AND {$place} and {$labelsumkey} {$condition}  order by {$default_ordercolumn} {$default_order} "        
+             },    
+            {
+               "question_type":"月度排序+地点+汇总主键",
+               "question_template1": "{$date_yearmonth}{$place}{$sumkey}{$order_by_column}最少(小）/最大（多）的月份",
+               "question_example1": "2024年月湖四青供电所的线路停电次数最少的月份",
+               "question_template2": "{$date_yearmonth}{$place}{$sumkey}{$order_by_column}排名{$rank}的月份",
+               "question_example2": "2024年月湖四青供电所的线路停电次数排名前三的月份有哪些？",
+               "question_sql":"select data_time FROM {$table_enname} WHERE {$date_yearmonth} AND {$place} and {$sumkey} order by {$order_by_column} {$rank}"        
+             },     
+            {
+               "question_type":"日期排序+地点+汇总主键",
+               "question_template1": "{$date_monthday}{$place}{$sumkey}{$order_by_column}最少(小）/最大（多）的月份",
+               "question_example1": "2024年12月月湖四青供电所的线路停电次数最少的月份",
+               "question_template2": "{$date_monthday}{$place}{$sumkey}{$order_by_column}排名{$rank}的月份",
+               "question_example2": "2024年12月月湖四青供电所的线路停电次数排名前三的月份有哪些？",
+               "question_sql":"select data_time FROM {$table_enname} WHERE {$date_monthday} AND {$place} and {$sumkey} order by {$order_by_column} {$rank}"        
+             },   
+            {
+               "question_type":"普通排序+历史整年",
+               "question_template1": "{$date_year}{$order_by_column}最少(小）/最大（多）的{$column_name}",
+               "question_example1": "2024年线路停电次数最少的供电所",
+               "question_template2": "{$date_year}{$order_by_column}排名{$rank}的{$column_name}有哪些？",
+               "question_example2": "2024年线路停电次数排名前三的供电所有哪些？",
+               "question_sql":"select {$column} FROM {$table_enname} WHERE {$date_year} order by {$order_by_column} {$rank}"        
+             },   
+            {
+               "question_type":"普通排序+历史整年+地点",
+               "question_template1": "{$date_year}{$place}{$order_by_column}最少(小）/最大（多）的{$column_name}",
+               "question_example1": "2024年南昌线路停电次数最少的供电所",
+               "question_template2": "{$date_year}{$place}{$order_by_column}排名{$rank}的{$column_name}有哪些？",
+               "question_example2": "2024年南昌线路停电次数排名前三的供电所有哪些？",
+               "question_sql":"select {$column} FROM {$table_enname} WHERE {$date_year} and {$place} order by {$order_by_column} {$rank}"        
+             },  
+             {
+               "question_type":"普通排序+历史整年+地点+标签主键",
+               "question_template1": "{$date_year}{$place}{$labelsumkey}{$order_by_column}最少(小）/最大（多）的{$column_name}",
+               "question_example1": "2024年南昌五星供电所线路停电次数最少的供电所",
+               "question_template2": "{$date_year}{$place}{$labelsumkey}{$order_by_column}排名{$rank}的{$column_name}有哪些？",
+               "question_example2": "2024年南昌五星供电所线路停电次数排名前三的供电所有哪些？",
+               "question_sql":"select {$column} FROM {$table_enname} WHERE {$date_year} and {$place} and {$labelsumkey} order by {$order_by_column} {$rank}"        
+             },     
+              {
+               "question_type":"普通排序+历史整年+地点+其他条件",
+               "question_template1": "{$date_year}{$place}{$condition}{$order_by_column}最少(小）/最大（多）的{$column_name}",
+               "question_example1": "2024年南昌爱湖变电站线路停电次数最少的供电所",
+               "question_template2": "{$date_year}{$place}{$condition} {$order_by_column}排名{$rank}的{$column_name}有哪些？",
+               "question_example2": "2024年南昌爱湖变电站线路停电次数排名前三的供电所有哪些？",
+               "question_sql":"select {$column} FROM {$table_enname} WHERE {$date_year} and {$place} and {$condition} order by {$order_by_column} {$rank}"        
+             },     
+               {
+               "question_type":"普通排序+历史整年+地点+标签主键+其他条件",
+               "question_template1": "{$date_year}{$place}{$labelsumkey}{$condition}{$order_by_column}最少(小）/最大（多）的{$column_name}",
+               "question_example1": "2024年南昌爱湖变电站线路停电次数最少的五星供电所",
+               "question_template2": "{$date_year}{$place}{$labelsumkey}{$condition} {$order_by_column}排名{$rank}的{$column_name}有哪些？",
+               "question_example2": "2024年南昌爱湖变电站线路停电次数排名前三的五星供电所有哪些？",
+               "question_sql":"select {$column} FROM {$table_enname} WHERE {$date_year} and {$place} and {$condition} and {$labelsumkey} order by {$order_by_column} {$rank}"        
+             },  
+            {
+               "question_type":"普通排序+历史整月",
+               "question_template1": "{$date_month}{$order_by_column}最少(小）/最大（多）的{$column_name}",
+               "question_example1": "2024年12月线路停电次数最少的供电所",
+               "question_template2": "{$date_month}{$order_by_column}排名{$rank}的{$column_name}有哪些？",
+               "question_example2": "2024年12月线路停电次数排名前三的供电所有哪些？",
+               "question_sql":"select {$column} FROM {$table_enname} WHERE {$date_month} order by {$order_by_column} {$rank}"        
+             },   
+            {
+               "question_type":"普通排序+历史整月+地点",
+               "question_template1": "{$date_month}{$place}{$order_by_column}最少(小）/最大（多）的{$column_name}",
+               "question_example1": "2024年12月南昌线路停电次数最少的供电所",
+               "question_template2": "{$date_month}{$place}{$order_by_column}排名{$rank}的{$column_name}有哪些？",
+               "question_example2": "2024年12月南昌线路停电次数排名前三的供电所有哪些？",
+               "question_sql":"select {$column} FROM {$table_enname} WHERE {$date_month} and {$place} order by {$order_by_column} {$rank}"        
+             },  
+             {
+               "question_type":"普通排序+历史整月+地点+标签主键",
+               "question_template1": "{$date_month}{$place}{$labelsumkey}{$order_by_column}最少(小）/最大（多）的{$column_name}",
+               "question_example1": "2024年12月南昌五星供电所线路停电次数最少的供电所",
+               "question_template2": "{$date_month}{$place}{$labelsumkey}{$order_by_column}排名{$rank}的{$column_name}有哪些？",
+               "question_example2": "2024年12月南昌五星供电所线路停电次数排名前三的供电所有哪些？",
+               "question_sql":"select {$column} FROM {$table_enname} WHERE {$date_month} and {$place} and {$labelsumkey} order by {$order_by_column} {$rank}"        
+             },     
+              {
+               "question_type":"普通排序+历史整月+地点+其他条件",
+               "question_template1": "{$date_month}{$place}{$condition}{$order_by_column}最少(小）/最大（多）的{$column_name}",
+               "question_example1": "2024年12月南昌爱湖变电站线路停电次数最少的供电所",
+               "question_template2": "{$date_month}{$place}{$condition} {$order_by_column}排名{$rank}的{$column_name}有哪些？",
+               "question_example2": "2024年12月南昌爱湖变电站线路停电次数排名前三的供电所有哪些？",
+               "question_sql":"select {$column} FROM {$table_enname} WHERE {$date_month} and {$place} and {$condition} order by {$order_by_column} {$rank}"        
+             },     
+               {
+               "question_type":"普通排序+历史整月+地点+标签主键+其他条件",
+               "question_template1": "{$date_month}{$place}{$labelsumkey}{$condition}{$order_by_column}最少(小）/最大（多）的{$column_name}",
+               "question_example1": "2024年12月南昌爱湖变电站线路停电次数最少的五星供电所",
+               "question_template2": "{$date_month}{$place}{$labelsumkey}{$condition} {$order_by_column}排名{$rank}的{$column_name}有哪些？",
+               "question_example2": "2024年12月南昌爱湖变电站线路停电次数排名前三的五星供电所有哪些？",
+               "question_sql":"select {$column} FROM {$table_enname} WHERE {$date_month} and {$place} and {$condition} and {$labelsumkey} order by {$order_by_column} {$rank}"        
+             },    
+            {
+               "question_type":"普通排序+历史整日",
+               "question_template1": "{$date_day}{$order_by_column}最少(小）/最大（多）的{$column_name}",
+               "question_example1": "2024年12月01日线路停电次数最少的供电所",
+               "question_template2": "{$date_day}{$order_by_column}排名{$rank}的{$column_name}有哪些？",
+               "question_example2": "2024年12月01日线路停电次数排名前三的供电所有哪些？",
+               "question_sql":"select {$column} FROM {$table_enname} WHERE {$date_day} order by {$order_by_column} {$rank}"        
+             },   
+            {
+               "question_type":"普通排序+历史整日+地点",
+               "question_template1": "{$date_day}{$place}{$order_by_column}最少(小）/最大（多）的{$column_name}",
+               "question_example1": "2024年12月01日南昌线路停电次数最少的供电所",
+               "question_template2": "{$date_day}{$place}{$order_by_column}排名{$rank}的{$column_name}有哪些？",
+               "question_example2": "2024年12月01日南昌线路停电次数排名前三的供电所有哪些？",
+               "question_sql":"select {$column} FROM {$table_enname} WHERE {$date_day} and {$place} order by {$order_by_column} {$rank}"        
+             },  
+             {
+               "question_type":"普通排序+历史整日+地点+标签主键",
+               "question_template1": "{$date_day}{$place}{$labelsumkey}{$order_by_column}最少(小）/最大（多）的{$column_name}",
+               "question_example1": "2024年12月01日南昌五星供电所线路停电次数最少的供电所",
+               "question_template2": "{$date_day}{$place}{$labelsumkey}{$order_by_column}排名{$rank}的{$column_name}有哪些？",
+               "question_example2": "2024年12月01日南昌五星供电所线路停电次数排名前三的供电所有哪些？",
+               "question_sql":"select {$column} FROM {$table_enname} WHERE {$date_day} and {$place} and {$labelsumkey} order by {$order_by_column} {$rank}"        
+             },     
+              {
+               "question_type":"普通排序+历史整日+地点+其他条件",
+               "question_template1": "{$date_day}{$place}{$condition}{$order_by_column}最少(小）/最大（多）的{$column_name}",
+               "question_example1": "2024年12月01日南昌爱湖变电站线路停电次数最少的供电所",
+               "question_template2": "{$date_day}{$place}{$condition} {$order_by_column}排名{$rank}的{$column_name}有哪些？",
+               "question_example2": "2024年12月01日南昌爱湖变电站线路停电次数排名前三的供电所有哪些？",
+               "question_sql":"select {$column} FROM {$table_enname} WHERE {$date_day} and {$place} and {$condition} order by {$order_by_column} {$rank}"        
+             },     
+               {
+               "question_type":"普通排序+历史整日+地点+标签主键+其他条件",
+               "question_template1": "{$date_day}{$place}{$labelsumkey}{$condition}{$order_by_column}最少(小）/最大（多）的{$column_name}",
+               "question_example1": "2024年12月01日南昌爱湖变电站线路停电次数最少的五星供电所",
+               "question_template2": "{$date_day}{$place}{$labelsumkey}{$condition} {$order_by_column}排名{$rank}的{$column_name}有哪些？",
+               "question_example2": "2024年12月01日南昌爱湖变电站线路停电次数排名前三的五星供电所有哪些？",
+               "question_sql":"select {$column} FROM {$table_enname} WHERE {$date_day} and {$place} and {$condition} and {$labelsumkey} order by {$order_by_column} {$rank}"        
+             },
+              {
+               "question_type":"月趋势+汇总主键",
+               "question_template1": "{$date_yearmonth}{$sumkey}{$table_simplename}每月{$column_name}",
+               "question_example1": "2024年月湖四青供电所线路停电事件的每月线路停电次数",
+               "question_template2": "{$date_yearmonth}{$sumkey}各月{$column_name}是多少？",
+               "question_example2": "22024年月湖四青供电所各月线路停电次数？",
+               "question_sql":"select data_time,{$column} FROM {$table_enname} WHERE {$date_yearmonth} and {$sumkey}  order by data_time "        
+             },
+               {
+               "question_type":"日趋势+汇总主键",
+               "question_template1": "{$date_monthday}{$sumkey}{$table_simplename}每月{$column_name}",
+               "question_example1": "2024年12月月湖四青供电所线路停电事件的每月线路停电次数",
+               "question_template2": "{$date_monthday}{$sumkey}各月{$column_name}是多少？",
+               "question_example2": "2024年12月月湖四青供电所各月线路停电次数？",
+               "question_sql":"select data_time,{$column} FROM {$table_enname} WHERE {$date_monthday} and {$sumkey}  order by data_time "        
+             }           
+        ]
+      }
+    ]
+  },
+  {
+    "template_type":"matter_template",
+    "template_name":"任务事项表训练模版",
+    "template_table_example":"什么单位什么时间发生了什么事情明细表",
+    "template_table":[
+         {"table_enname":"v_line_outage_event_new","table_cnname": "配电线路停运事件明细表","table_simplename":"配电线路停电事件","istuning":"1"}
+      ],
+     "template_data": [
+      {
+        "publicvariable":[
+           {"variable_name":"date","variable_cname":"时间","variable_value": " EVENT_day >='BEGIN_INPUT_DATE' and EVENT_day<='END_INPUT_DATE' ","variable_input":"INPUT_DATE","variable_input_example":"2024-12-01"}
+        ],
+        "tablevariable":[
+             {
+               "table_enname":"v_line_outage_event_new",
+               "variable":
+               [
+                  {"variable_name":"place","variable_cname":"地点或单位","variable_cnvalue": " ORGAN_NAME like 'INPUT_ORGAN_NAME%' ","variable_envalue":" ORGAN_CODE='INPUT_ORGAN_CODE' ","variable_input":"INPUT_ORGAN_NAME","variable_input_example":"南昌供电分公司"},
+                  {"variable_name":"default_ordercolumn","variable_cname":"默认排序字段","variable_cnvalue": " EVENT_TIME ","variable_envalue":"  ","variable_input":"","variable_input_example":""},
+                  {"variable_name":"default_order","variable_cname":"默认排序顺序","variable_cnvalue": " desc ","variable_envalue":"  ","variable_input":"","variable_input_example":""},
+                  {"variable_name":"default_column","variable_cname":"默认列","variable_cnvalue": " id,ORGAN_CODE,ORGAN_NAME,LINE_ID,LINE_NAME,EVENT_TIME,POWER_ON_TIME,OUTAGE_REASON,OUTAGE_EVENT_TYPE_NAME ","variable_envalue":"  ","variable_input":"","variable_input_example":""},
+                  {"variable_name":"enum_values","variable_cname":"枚举列","variable_cnvalue": "OUTAGE_EVENT_TYPE_NAME,LINE_NATURE_NAME,SOURCE_EVENT_TYPE,DATA_SOURCE,OUTAGE_EVENT_SMALL_TYPE_NAME","variable_envalue":"OUTAGE_EVENT_TYPE,LINE_NATURE,SOURCE_EVENT_ID,DATA_SOURCE,OUTAGE_EVENT_SMALL_TYPE","variable_input":"","variable_input_example":""},
+                  {"variable_name":"condition","variable_cname":"除时间地点外的其他条件（字符型字段）","variable_cnvalue": "LINE_NAME,SUBSTATION_NAME,TEAM_NAME,EQUIPMENT_OWNER_NAME,EQUIPMENT_OWNER_TEL,OUTAGE_REASON,POWER_ON_TIME","variable_envalue":"LINE_ID,SUBSTATION_ID,TEAM,EQUIPMENT_OWNER_ID,EQUIPMENT_OWNER_TEL,OUTAGE_REASON,POWER_ON_TIME","variable_input":"","variable_input_example":""},
+                  {"variable_name":"group_by_column","variable_cname":"分组统计列","variable_cnvalue": "EVENT_YEAR,EVENT_MONTH,EVENT_DAY,ORGAN_NAME,OUTAGE_EVENT_TYPE_NAME,LINE_NATURE_NAME,SOURCE_EVENT_TYPE,DATA_SOURCE,OUTAGE_EVENT_SMALL_TYPE_NAME","variable_envalue":"EVENT_YEAR,EVENT_MONTH,EVENT_DAY,ORGAN_code,OUTAGE_EVENT_TYPE,LINE_NATURE,SOURCE_EVENT_ID,DATA_SOURCE,OUTAGE_EVENT_SMALL_TYPE","variable_input":"","variable_input_example":""},
+                  {"variable_name":"function_name", "variable_name": "分组函数", "variable_cnvalue": "SUM,MIN,MAX", "variable_envalue": "SUM,MIN,MAX"}
+                ]
+             }
+            ],
+           "funingtemplates":[
+             {
+               "question_type":"明细查询+时间",
+               "question_template1": "{$date}期间{$table_simplename}的明细",
+               "question_example1": "今天线路停运事件的明细",
+               "question_template2": "{$date}{$table_simplename}的详情",
+               "question_example2": "近三天线路停运详情",
+               "question_sql":"select {$default_column} FROM {$table_enname} WHERE {$date} order by {$default_ordercolumn} {$default_order} "        
+             },   
+              {
+               "question_type":"明细查询+地点",
+               "question_template1": "{$place}{$table_simplename}的明细",
+               "question_example1": "南昌供电分公司线路停运明细",
+               "question_template2": "{$place}{$table_simplename}的详情",
+               "question_example2": "南昌配电线路停运详情",
+               "question_sql":"select {$default_column} FROM {$table_enname} WHERE {$place} order by {$default_ordercolumn} {$default_order} "        
+             }, 
+             {
+               "question_type":"明细查询+枚举",
+               "question_template1": "{$enum_values}的{$table_simplename}的明细",
+               "question_example1": "故障线路停运明细",
+               "question_template2": "{$enum_values}的{$table_simplename}的详情",
+               "question_example2": "线路运维性质为地市公司运维或县公司运维的线路停运详情",
+               "question_sql":"select {$default_column} FROM {$table_enname} WHERE {$enum_values} order by {$default_ordercolumn} {$default_order} "        
+             },    
+              {
+               "question_type":"明细查询+其他条件",
+               "question_template1": "{$condition}的{$table_simplename}的明细",
+               "question_example1": "线路名称为某某的线路停运明细",
+               "question_template2": "{$condition}的{$table_simplename}的详情",
+               "question_example2": "某某线路的停运详情",
+               "question_sql":"select {$default_column} FROM {$table_enname} WHERE {$condition} order by {$default_ordercolumn} {$default_order} "        
+             },  
+             {
+               "question_type":"明细查询+时间+地点",
+               "question_template1": "{$date}期间{$place}{$table_simplename}的明细",
+               "question_example1": "今天南昌线路停运事件的明细",
+               "question_template2": "{$date}{$place}{$table_simplename}的详情",
+               "question_example2": "近三天南昌线路停运详情",
+               "question_sql":"select {$default_column} FROM {$table_enname} WHERE {$date} and {$place} order by {$default_ordercolumn} {$default_order} "        
+             },                
+             {
+               "question_type":"明细查询+时间+地点+枚举、时间+枚举、地点+枚举",
+               "question_template1": "{$date}期间{$place}{$enum_values}{$table_simplename}的明细",
+               "question_example1": "今天南昌停运性质为故障的线路停运事件的明细",
+               "question_template2": "{$date}{$place}{$enum_values}的{$table_simplename}的详情",
+               "question_example2": "近三天南昌运维性质为市公司运维或县公司运维的的线路停运详情",
+               "question_sql":"select {$default_column} FROM {$table_enname} WHERE {$date} and {$place} and {$enum_values} order by {$default_ordercolumn} {$default_order} "        
+             },     
+             {
+               "question_type":"明细查询+时间+地点+枚举+其他条件、时间+其他条件、地点+其他条件、时间+地点+其他条件、枚举+枚举、枚举+其他条件、其他条件+其他条件、枚举+枚举+其他条件等任意组合",
+               "question_template1": "{$date}期间{$place}{$enum_values}{$condition}{$table_simplename}的明细",
+               "question_example1": "今天南昌停运性质为故障的线路停运事件的明细",
+               "question_template2": "{$date}{$place}{$enum_values}{$condition}的{$table_simplename}的详情",
+               "question_example2": "近三天南昌某某线的故障线路停运详情",
+               "question_sql":"select {$default_column} FROM {$table_enname} WHERE {$date} and {$place} and {$enum_values} and {$condition} order by {$default_ordercolumn} {$default_order} "        
+             },                                             
+             {
+               "question_type":"普通聚合+时间",
+               "question_template1": "{$date}期间{$table_simplename}的{$function_name}{$column_name}",
+               "question_example1": "今天线路停运事件的次数",
+               "question_template2": "{$date}{$table_simplename}的{$column_name}{$function_name}",
+               "question_example2": "近三天线路停运合计",
+               "question_sql":"select {$function}($column) FROM {$table_enname} WHERE {$date}  "        
+             },   
+              {
+               "question_type":"普通聚合+地点",
+               "question_template1": "{$place}{$table_simplename}的{$function_name}{$column_name}",
+               "question_example1": "南昌供电分公司线路合计停运次数",
+               "question_template2": "{$place}{$table_simplename}的{$column_name}{$function_name}",
+               "question_example2": "南昌配电线路停运合计",
+               "question_sql":"select {$function}($column) FROM {$table_enname} WHERE {$place} "        
+             }, 
+             {
+               "question_type":"普通聚合+枚举",
+               "question_template1": "{$enum_values}的{$table_simplename}的{$function_name}{$column_name}",
+               "question_example1": "故障合计线路停运次数",
+               "question_template2": "{$enum_values}的{$table_simplename}的{$column_name}{$function_name}",
+               "question_example2": "线路运维性质为地市公司运维或县公司运维的线路停运次数",
+               "question_sql":"select {$function}($column) FROM {$table_enname} WHERE {$enum_values} "        
+             },    
+              {
+               "question_type":"普通聚合+其他条件",
+               "question_template1": "{$condition}的{$table_simplename}的{$function_name}{$column_name}",
+               "question_example1": "线路名称为某某的线路停运次数",
+               "question_template2": "{$condition}的{$table_simplename}的{$column_name}{$function_name}",
+               "question_example2": "某某线路的停运合计",
+               "question_sql":"select {$function}($column) FROM {$table_enname} WHERE {$condition}  "        
+             },  
+             {
+               "question_type":"普通聚合+时间+地点",
+               "question_template1": "{$date}期间{$place}{$table_simplename}的{$function_name}{$column_name}",
+               "question_example1": "今天南昌线路停运事件的次数",
+               "question_template2": "{$date}{$place}{$table_simplename}的{$column_name}{$function_name}",
+               "question_example2": "近三天南昌线路停运小计",
+               "question_sql":"select  {$function}($column)  FROM {$table_enname} WHERE {$date} and {$place}"        
+             },                
+             {
+               "question_type":"普通聚合+时间+地点+枚举、时间+枚举、地点+枚举",
+               "question_template1": "{$date}期间{$place}{$enum_values}{$table_simplename}的{$function_name}{$column_name}",
+               "question_example1": "今天南昌停运性质为故障的线路停运事件次数",
+               "question_template2": "{$date}{$place}{$enum_values}的{$table_simplename}的{$column_name}{$function_name}",
+               "question_example2": "近三天南昌运维性质为市公司运维或县公司运维的的线路停运小计",
+               "question_sql":"select  {$function}($column) FROM {$table_enname} WHERE {$date} and {$place} and {$enum_values}"        
+             },     
+             {
+               "question_type":"普通聚合+时间+地点+枚举+其他条件、明时间+其他条件、地点+其他条件、时间+地点+其他条件、枚举+枚举、枚举+其他条件、其他条件+其他条件、枚举+枚举+其他条件等任意组合",
+               "question_template1": "{$date}期间{$place}{$enum_values}{$condition}{$table_simplename}的{$function_name}{$column_name}",
+               "question_example1": "今天南昌停运性质为故障的线路停运事件的次数",
+               "question_template2": "{$date}{$place}{$enum_values}{$condition}的{$table_simplename}的{$column_name}{$function_name}",
+               "question_example2": "近三天南昌某某线的故障线路停运小计",
+               "question_sql":"select {$function}($column) FROM {$table_enname} WHERE {$date} and {$place} and {$enum_values} and {$condition}"        
+             },
+             {
+               "question_type":"排序问题+时间",
+               "question_template1": "{$date}期间{$order_by_column_name}排名前{$rank_name}的{$column_name}",
+               "question_example1": "今天线路停运时长前三的单位",
+               "question_template2": "{$date}期间{$order_by_column_name}排名后{$rank_name}的{$column_name}",
+               "question_example2": "近三天线路停运时长后三的单位",
+               "question_sql":"select {$column} FROM {$table_enname} WHERE {$date} order by  {$order_by_column} {$rank}"        
+             },   
+              {
+               "question_type":"排序问题+地点",
+               "question_template1": "{$place}{$order_by_column_name}排名前{$rank_name}的{$column_name}",
+               "question_example1": "南昌供电分公司线路停运时长前三的单位",
+               "question_template2": "{$place}{$order_by_column_name}排名后{$rank_name}的{$column_name}",
+               "question_example2": "南昌配电线路停运时长后三的单位",
+               "question_sql":"select  {$column} FROM {$table_enname} WHERE {$place} order by {$order_by_column} {$rank}"        
+             }, 
+             {
+               "question_type":"排序问题+枚举",
+               "question_template1": "{$enum_values}{$order_by_column_name}排名前{$rank_name}的{$column_name}",
+               "question_example1": "故障线路停运时长前三的单位",
+               "question_template2": "{$enum_values}{$order_by_column_name}排名后{$rank_name}的{$column_name}",
+               "question_example2": "线路运维性质为地市公司运维或县公司运维的线路停运时长后三的单位",
+               "question_sql":"select  {$column}  FROM {$table_enname} WHERE {$enum_values} order by {$order_by_column} {$rank}"        
+             },    
+              {
+               "question_type":"排序问题+其他条件",
+               "question_template1": "{$condition}{$order_by_column_name}排名前{$rank_name}的{$column_name}",
+               "question_example1": "线路名称为某某的线路停运时长前三的单位",
+               "question_template2": "{$condition}{$order_by_column_name}排名后{$rank_name}的{$column_name}",
+               "question_example2": "某某线路的停运时长后三的单位",
+               "question_sql":"select  {$column}  FROM {$table_enname} WHERE {$condition} order by {$order_by_column} {$rank}"        
+             },  
+             {
+               "question_type":"排序问题+时间+地点",
+               "question_template1": "{$date}期间{$place}{$order_by_column_name}排名前{$rank_name}的{$column_name}",
+               "question_example1": "今天南昌线路停运时长前三的单位",
+               "question_template2": "{$date}{$place}{$table_simplename}的详情",
+               "question_example2": "近三天南昌线路停运时长后三的单位",
+               "question_sql":"select  {$column} FROM {$table_enname} WHERE {$date} and {$place} order by {$order_by_column} {$rank}"        
+             },                
+             {
+               "question_type":"排序问题+时间+地点+枚举、明细查询+时间+枚举、明细查询+地点+枚举",
+               "question_template1": "{$date}期间{$place}{$enum_values}{$order_by_column_name}排名前{$rank_name}的{$column_name}",
+               "question_example1": "今天南昌停运性质为故障的线路停运时长前三的单位",
+               "question_template2": "{$date}{$place}{$enum_values}的{$order_by_column_name}排名后{$rank_name}的{$column_name}",
+               "question_example2": "近三天南昌运维性质为市公司运维或县公司运维的的线路停运时长后三的单位",
+               "question_sql":"select  {$column}  FROM {$table_enname} WHERE {$date} and {$place} and {$enum_values} order by {$order_by_column} {$rank}"        
+             },     
+             {
+               "question_type":"排序问题+时间+地点+枚举+其他条件、时间+其他条件、地点+其他条件、时间+地点+其他条件、枚举+枚举、枚举+其他条件、其他条件+其他条件、枚举+枚举+其他条件等任意组合",
+               "question_template1": "{$date}期间{$place}{$enum_values}{$condition}{$order_by_column_name}排名前{$rank_name}的{$column_name}",
+               "question_example1": "今天南昌停运性质为故障的线路停运时长前三的单位",
+               "question_template2": "{$date}{$place}{$enum_values}{$condition}的{$order_by_column_name}排名后{$rank_name}的{$column_name}",
+               "question_example2": "近三天南昌某某线的故障线路停运时长后三的单位",
+               "question_sql":"select  {$column}  FROM {$table_enname} WHERE {$date} and {$place} and {$enum_values} and {$condition} order by {{$order_by_column} {$rank}"        
+             },                                             
+             {
+               "question_type":"分组聚合+时间",
+               "question_template1": "按{$group_by_column_name}分组统计{$date}期间{$table_simplename}的{$function_name}{$column_name}",
+               "question_example1": "按单位分组统计今天线路停运事件的次数",
+               "question_template2": "按{$group_by_column_name}分组统计{$date}期间{$table_simplename}的{$column_name}{$function_name}",
+               "question_example2": "按单位分组统计近三天线路停运数量",
+               "question_sql":"select {$function}($column) FROM {$table_enname} WHERE {$date}  group by  {$group_by_column}"        
+             },   
+              {
+               "question_type":"分组聚合+地点",
+               "question_template1": "按{$group_by_column_name}分组统计{$place}{$table_simplename}的{$function_name}{$column_name}",
+               "question_example1": "按单位分组南昌供电分公司线路合计停运次数",
+               "question_template2": "按{$group_by_column_name}分组统计{$place}{$table_simplename}的{$column_name}{$function_name}",
+               "question_example2": "按单位分组南昌配电线路停运合计",
+               "question_sql":"select {$function}($column) FROM {$table_enname} WHERE {$place}  group by  {$group_by_column}"       
+             }, 
+             {
+               "question_type":"分组聚合+枚举",
+               "question_template1": "按{$group_by_column_name}分组统计{$enum_values}的{$table_simplename}的{$function_name}{$column_name}",
+               "question_example1": "按单位分组统计故障合计线路停运次数",
+               "question_template2": "按{$group_by_column_name}分组统计{$enum_values}的{$table_simplename}的{$column_name}{$function_name}",
+               "question_example2": "按单位分组统计线路运维性质为地市公司运维或县公司运维的线路停运次数",
+               "question_sql":"select {$function}($column) FROM {$table_enname} WHERE {$enum_values} group by  {$group_by_column}"      
+             },    
+              {
+               "question_type":"分组聚合+其他条件",
+               "question_template1": "按{$group_by_column_name}分组统计{$condition}的{$table_simplename}的{$function_name}{$column_name}",
+               "question_example1": "按单位分组统计线路名称为某某的线路停运次数",
+               "question_template2": "按{$group_by_column_name}分组统计{$condition}的{$table_simplename}的{$column_name}{$function_name}",
+               "question_example2": "按单位分组统计某某线路的停运合计",
+               "question_sql":"select {$function}($column) FROM {$table_enname} WHERE {$condition}   group by  {$group_by_column}"        
+             },  
+             {
+               "question_type":"分组聚合+时间+地点",
+               "question_template1": "按{$group_by_column_name}分组统计{$date}期间{$place}{$table_simplename}的{$function_name}{$column_name}",
+               "question_example1": "按单位分组统计今天南昌线路停运事件的次数",
+               "question_template2": "按{$group_by_column_name}分组统计{$date}{$place}{$table_simplename}的{$column_name}{$function_name}",
+               "question_example2": "按单位分组统计近三天南昌线路停运小计",
+               "question_sql":"select  {$function}($column)  FROM {$table_enname} WHERE {$date} and {$place}  group by  {$group_by_column}"        
+             },                
+             {
+               "question_type":"分组聚合+时间+地点+枚举、时间+枚举、地点+枚举",
+               "question_template1": "按{$group_by_column_name}分组统计{$date}期间{$place}{$enum_values}{$table_simplename}的{$function_name}{$column_name}",
+               "question_example1": "按单位分组统计今天南昌停运性质为故障的线路停运事件次数",
+               "question_template2": "按{$group_by_column_name}分组统计{$date}{$place}{$enum_values}的{$table_simplename}的{$column_name}{$function_name}",
+               "question_example2": "按单位分组统计近三天南昌运维性质为市公司运维或县公司运维的的线路停运小计",
+               "question_sql":"select  {$function}($column) FROM {$table_enname} WHERE {$date} and {$place} and {$enum_values}  group by  {$group_by_column}"       
+             },     
+             {
+               "question_type":"分组聚合+时间+地点+枚举+其他条件、时间+其他条件、地点+其他条件、时间+地点+其他条件、枚举+枚举、枚举+其他条件、其他条件+其他条件、枚举+枚举+其他条件等任意组合",
+               "question_template1": "按{$group_by_column_name}分组统计{$date}期间{$place}{$enum_values}{$condition}{$table_simplename}的{$function_name}{$column_name}",
+               "question_example1": "按单位分组统计今天南昌停运性质为故障的线路停运事件的次数",
+               "question_template2": "按{$group_by_column_name}分组统计{$date}{$place}{$enum_values}{$condition}的{$table_simplename}的{$column_name}{$function_name}",
+               "question_example2": "按单位分组统计近三天南昌某某线的故障线路停运小计",
+               "question_sql":"select {$function}($column) FROM {$table_enname} WHERE {$date} and {$place} and {$enum_values} and {$condition}  group by  {$group_by_column}"       
+             }                                                 
+        ]    
+     }
+    ]
+  }
+]

@@ -1,0 +1,112 @@
+[
+    {
+        "type": "时间",
+        "query": "[date]期间[table_name]的[column_name]",
+        "SQL": "SELECT {$column} FROM {$table} WHERE {$date}"
+    },
+    {
+        "type": "地点",
+        "query": "[place]的[table_name]的[column_name]",
+        "SQL": "SELECT {$column} FROM {$table} WHERE {$place}"
+    },
+    {
+        "type": "单一枚举",
+        "query": "[enum_value]类型的[table_name]的[column_name]",
+        "SQL": "SELECT {$column} FROM {$table} WHERE {$enum_column} = {$enum_value}"
+    },
+    {
+        "type": "多个枚举",
+        "query": "[enum_values]类型的[table_name]的[column_name]",
+        "SQL": "SELECT {$column} FROM {$table} WHERE {$enum_column} IN ({$enum_values})"
+    },
+    {
+        "type": "时间+地点",
+        "query": "[date][place]的[table_name]的[column_name]",
+        "SQL": "SELECT {$column} FROM {$table} WHERE {$date} AND {$place}"
+    },
+    {
+        "type": "时间+单一枚举",
+        "query": "[date]期间[enum_value]的[table_name]的[column_name]",
+        "SQL": "SELECT {$column} FROM {$table} WHERE {$date} AND {$enum_column} = {$enum_value}"
+    },
+    {
+        "type": "时间+多个枚举",
+        "query": "[date]期间[enum_values]的[table_name]的[column_name]",
+        "SQL": "SELECT {$column} FROM {$table} WHERE {$date} AND {$enum_column} IN ({$enum_values})"
+    },
+    {
+        "type": "时间+其他条件",
+        "query": "[date]的[table_name]中[condition]的[column_name]",
+        "SQL": "SELECT {$column} FROM {$table} WHERE {$date} AND {$condition}"
+    },
+    {
+        "type": "时间+地点+单一枚举",
+        "query": "[date][place]的[enum_value]类型的[table_name]中[condition]的[column_name]",
+        "SQL": "SELECT {$column} FROM {$table} WHERE {$date} AND {$enum_column} = {$enum_value}"
+    },
+    {
+        "type": "时间+地点+多个枚举",
+        "query": "[date][place]的[enum_values]类型的[table_name]中[condition]的[column_name]",
+        "SQL": "SELECT {$column} FROM {$table} WHERE {$date} AND {$enum_column} IN ({$enum_values})"
+    },
+    {
+        "type": "时间+地点+其他条件",
+        "query": "[date][place]的[table_name]中[condition]的[column_name]",
+        "SQL": "SELECT {$column} FROM {$table} WHERE {$date} AND {$place} AND {$condition}"
+    },
+    {
+        "type": "普通聚合+地点",
+        "query": "[place]的[table_name]的[function][column_name]",
+        "SQL": "SELECT {$function}({$column}) FROM {$table} WHERE {$place}"
+    },
+    {
+        "type": "普通聚合+时间",
+        "query": "[date]期间的[table_name]事件[function][column_name]",
+        "SQL": "SELECT {$function}({$column}) FROM {$table} WHERE {$date}"
+    },
+    {
+        "type": "普通聚合+单一枚举",
+        "query": "[enum_value]类型的[table_name]的[function][column_name]",
+        "SQL": "SELECT {$function}({$column}) FROM {$table} WHERE {$enum_column} = {$enum_value}"
+    },
+    {
+        "type": "普通聚合+多个枚举",
+        "query": "[enum_values]类型的[table_name]的[function][column_name]",
+        "SQL": "SELECT {$function}({$column}) FROM {$table} WHERE {$enum_column} IN ({$enum_values})"
+    },
+    {
+        "type": "普通聚合+时间+地点",
+        "query": "[date][place]的[table_name]的[function][column_name]",
+        "SQL": "SELECT {$function}({$column}) FROM {$table} WHERE {$date} and {$place}"
+    },
+    {
+        "type": "普通聚合+时间+单一枚举",
+        "query": "[date]的[enum_value]类型[table_name]的[function][column_name]",
+        "SQL": "SELECT {$function}({$column}) FROM {$table} WHERE {$date} and {$enum_column} = {$enum_value}"
+    },
+    {
+        "type": "普通聚合+时间+多个枚举",
+        "query": "[date]的[enum_values]类型[table_name]的[function][column_name]",
+        "SQL": "SELECT {$function}({$column}) FROM {$table} WHERE {$date} and {$enum_column} IN ({$enum_values})"
+    },
+    {
+        "type": "普通聚合+时间+其他条件",
+        "query": "[date]发生的[table_name]事件中[condition]的[function][column_name]",
+        "SQL": "SELECT {$function}({$column}) FROM {$table} WHERE {$date} and {$condition}"
+    },
+    {
+        "type": "普通聚合+时间+地点+枚举",
+        "query": "[date][place]的[enum_value]类型[table_name]的[function][column_name]",
+        "SQL": "SELECT {$function}({$column}) FROM {$table} WHERE {$place} AND {$enum_column} = {$enum_value}"
+    },
+    {
+        "type": "普通聚合+时间+地点+分组统计",
+        "query": "[date][place]各[group_by_column]发生的[table_name]事件的[function][column_name]",
+        "SQL": "SELECT {$group_by_column}, {$function}({$column}) FROM {$table} WHERE {$place} AND {$date} GROUP BY {$group_by_column}"
+    },
+    {
+        "type": "排序问题",
+        "query": "[date][order_by_column]排名[rank]的[column_name]有哪些",
+        "SQL": "SELECT {$column} FROM {$table} WHERE {$date} ORDER BY {$order_by_column} {$rank}"
+    }
+]
